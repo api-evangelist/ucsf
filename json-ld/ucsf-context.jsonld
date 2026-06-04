@@ -1,0 +1,80 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "ucsf": "https://profilesdeveloper.ucsf.edu/vocab#",
+    "@vocab": "https://profilesdeveloper.ucsf.edu/vocab#",
+
+    "name": "schema:name",
+    "url": "schema:url",
+    "description": "schema:description",
+
+    "University": "schema:CollegeOrUniversity",
+    "legalName": "schema:legalName",
+    "sameAs": "schema:sameAs",
+
+    "Profile": "ucsf:Profile",
+    "FirstName": "schema:givenName",
+    "LastName": "schema:familyName",
+    "Name": "schema:name",
+    "Email": "schema:email",
+    "Title": "schema:jobTitle",
+    "Titles": "schema:jobTitle",
+    "School": "schema:affiliation",
+    "Department": "schema:department",
+    "ORCID": {
+      "@id": "schema:identifier",
+      "@type": "@id"
+    },
+    "PhotoURL": {
+      "@id": "schema:image",
+      "@type": "@id"
+    },
+    "ProfilesURL": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "Narrative": "schema:description",
+    "Keywords": "schema:keywords",
+    "FreetextKeywords": "schema:keywords",
+    "PublicationCount": "schema:numberOfItems",
+
+    "Address": "schema:address",
+    "Address1": "schema:streetAddress",
+    "Address2": "schema:addressLocality",
+    "Telephone": "schema:telephone",
+    "Fax": "schema:faxNumber",
+    "Latitude": "schema:latitude",
+    "Longitude": "schema:longitude",
+
+    "Publications": "schema:hasPart",
+    "Education_Training": "schema:alumniOf",
+    "AwardOrHonors": "schema:award",
+
+    "ResearchActivitiesAndFunding": "ucsf:ResearchActivitiesAndFunding",
+    "Role": "schema:roleName",
+    "Sponsor": "schema:funder",
+    "SponsorAwardID": "schema:identifier",
+    "StartDate": "schema:startDate",
+    "EndDate": "schema:endDate",
+
+    "WebLinks": "ucsf:WebLinks",
+    "MediaLinks": "ucsf:MediaLinks",
+    "Videos": "schema:video",
+    "ClinicalTrials": "ucsf:ClinicalTrials",
+    "GlobalHealth": "ucsf:GlobalHealth",
+    "CollaborationInterests": "ucsf:CollaborationInterests",
+    "FacultyMentoring": "ucsf:FacultyMentoring"
+  },
+  "@type": "University",
+  "@id": "https://www.ucsf.edu/",
+  "name": "University of California, San Francisco",
+  "legalName": "University of California, San Francisco",
+  "url": "https://www.ucsf.edu/",
+  "description": "Public health-sciences university dedicated to graduate and health professions education, biomedical research, and patient care. Publishes the open UCSF Profiles JSON API covering 8,000+ researchers, faculty, and postdocs.",
+  "sameAs": [
+    "https://github.com/UCSF",
+    "https://www.linkedin.com/school/ucsf/",
+    "https://profilesdeveloper.ucsf.edu/",
+    "https://developer.ucsf.edu/"
+  ]
+}
