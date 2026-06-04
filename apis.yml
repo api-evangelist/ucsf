@@ -1,0 +1,88 @@
+---
+aid: ucsf
+name: University of California, San Francisco
+description: >-
+  The University of California, San Francisco (UCSF) is a public health-sciences
+  university and the only UC campus dedicated exclusively to graduate and health
+  professions education, biomedical research, and patient care. It is ranked #39 in
+  the QS World University Rankings 2025. UCSF maintains a public developer presence
+  centered on the CTSI-operated UCSF Profiles research-networking platform, which
+  exposes an open JSON API covering 8,000+ researchers, faculty, and postdocs. UCSF
+  also runs an internal developer portal (developer.ucsf.edu) and a MuleSoft Anypoint
+  API platform managed by ITS Integration Services that catalogs SIS course
+  enrollment, building metadata, ServiceNow, and CV APIs, but those are gated behind
+  MyAccess SSO and the campus network and are not publicly consumable.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/ucsf/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Health Sciences
+  - Research
+  - Researcher Profiles
+  - Open Data
+  - United States
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: ucsf:profiles-json
+    name: UCSF Profiles JSON API
+    description: >-
+      Open JSON API from the CTSI-operated UCSF Profiles research-networking
+      platform, providing data on 8,000+ UCSF researchers, faculty, and postdocs:
+      name, school, department, title, ORCID, education, research interests,
+      publications, grants, and more. GET requests return JSON (v2), with CORS and
+      JSONP support. A source parameter identifying the calling application is
+      required; no advance permission is needed to begin, but developers are asked
+      to contact UCSF before production use and to refresh cached data weekly.
+    humanURL: https://profilesdeveloper.ucsf.edu/json-api
+    baseURL: https://api.profiles.ucsf.edu/json/v2/
+    tags: [ Research, Researcher Profiles, Open Data, JSON, Publications ]
+    properties:
+      - type: Documentation
+        url: https://profilesdeveloper.ucsf.edu/json-api
+      - type: DeveloperPortal
+        url: https://profilesdeveloper.ucsf.edu/
+  - aid: ucsf:developer-portal
+    name: Developer@UCSF API Portal (internal)
+    description: >-
+      UCSF's institutional API catalog and developer portal, operated by ITS
+      Integration Services on the MuleSoft Anypoint Platform. It documents APIs such
+      as SIS Course Enrollment, Building Metadata (Archibus), ServiceNow incident
+      creation, and CV/Advance data. Access requires MyAccess SSO and the UCSF
+      network/VPN, so these APIs are not publicly consumable; listed here for
+      completeness of the institutional API footprint.
+    humanURL: https://developer.ucsf.edu/all-apis
+    tags: [ Internal, Gated, MuleSoft, SIS, Identity ]
+    properties:
+      - type: Documentation
+        url: https://developer.ucsf.edu/all-apis
+      - type: DeveloperPortal
+        url: https://developer.ucsf.edu/
+      - type: Authentication
+        url: https://developer.ucsf.edu/apisucsf
+common:
+  - type: Website
+    url: https://www.ucsf.edu/
+  - type: GitHub
+    url: https://github.com/UCSF
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/ucsf/
+  - type: DeveloperPortal
+    url: https://developer.ucsf.edu/
+  - type: Plans
+    url: plans/ucsf-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/ucsf-rate-limits.yml
+  - type: FinOps
+    url: finops/ucsf-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,51 @@
+---
+name: University of California, San Francisco
+description: University of California, San Francisco public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/ucsf/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 3
+    summary: >-
+      UCSF has a genuinely public, documented, and live open-data API: the UCSF
+      Profiles JSON API (api.profiles.ucsf.edu/json/v2/), which returned real JSON
+      researcher data when probed with a source parameter. Its docs at
+      profilesdeveloper.ucsf.edu resolved 200. UCSF also runs an institutional
+      Developer@UCSF portal on MuleSoft Anypoint (SIS, building metadata, ServiceNow,
+      CV APIs), but these are gated behind MyAccess SSO and the campus network and
+      are not publicly consumable; developer.ucsf.edu and integrationservices.ucsf.edu
+      did not resolve from the review network (status 0) though they are publicly
+      indexed and confirmed via search. No endpoints were fabricated; only the
+      Profiles API base URL and example call were verified live.
+    endpoints:
+      - url: https://www.ucsf.edu/
+        status: 200
+        note: Official institution website.
+      - url: https://api.profiles.ucsf.edu/json/v2/?ProfilesURLName=kirsten.bibbins-domingo&source=apievangelist.com
+        status: 200
+        note: Public Profiles JSON API; returned live researcher JSON.
+      - url: https://profilesdeveloper.ucsf.edu/
+        status: 200
+        note: UCSF Profiles developer documentation site.
+      - url: https://profilesdeveloper.ucsf.edu/json-api
+        status: 200
+        note: JSON API documentation with base URL and parameters.
+      - url: https://profiles.ucsf.edu/search/
+        status: 200
+        note: Public researcher search front end.
+      - url: https://data.ucsf.edu/
+        status: 200
+        note: UCSF Data portal / catalog (Scuba ecosystem); no public open API endpoint documented.
+      - url: https://developer.ucsf.edu/all-apis
+        status: 0
+        note: Internal developer portal API catalog; did not resolve from review network, publicly indexed, MyAccess/VPN gated.
+      - url: https://integrationservices.ucsf.edu/ucsf-api-portal
+        status: 0
+        note: ITS Integration Services MuleSoft Anypoint portal page; did not resolve from review network, gated.
+      - url: https://github.com/UCSF
+        status: 200
+        note: Official UCSF GitHub organization (sparse).
+      - url: https://www.linkedin.com/school/ucsf/
+        status: 999
+        note: Official LinkedIn school page; LinkedIn returns 999 to automated probes.
