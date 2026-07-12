@@ -67,6 +67,8 @@ apis:
       - type: Authentication
         url: https://developer.ucsf.edu/apisucsf
 common:
+  - type: DomainSecurity
+    url: security/ucsf-domain-security.yml
   - type: Website
     url: https://www.ucsf.edu/
   - type: GitHub
