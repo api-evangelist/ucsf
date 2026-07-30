@@ -13,9 +13,21 @@ description: >-
   enrollment, building metadata, ServiceNow, and CV APIs, but those are gated behind
   MyAccess SSO and the campus network and are not publicly consumable.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ucsf.png
 url: https://raw.githubusercontent.com/api-evangelist/ucsf/refs/heads/main/apis.yml
 tags:
   - Education
