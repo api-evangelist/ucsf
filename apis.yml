@@ -184,7 +184,16 @@ apis:
       no stability commitment. Verified live 2026-08-19, returning 320 documents.
     humanURL: https://www.industrydocuments.ucsf.edu/
     baseURL: https://cms.libckm.org/api/
-    tags: [ Content API, CMS, Digital Archive, JSON ]
+    tags:
+    - content-api
+    - CMS
+    - Digital Archive
+    - JSON
+    tags_raw:
+    - Content API
+    - CMS
+    - Digital Archive
+    - JSON
     properties:
       - type: Website
         url: https://www.industrydocuments.ucsf.edu/
