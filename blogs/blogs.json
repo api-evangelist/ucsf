@@ -6,10 +6,16 @@
       "feed_url": "https://www.ucsf.edu/news",
       "title": "",
       "saved": 0,
-      "method": "none",
-      "error": "parse_failed"
+      "method": "none"
+    },
+    {
+      "source": "https://profilesdeveloper.ucsf.edu/contact-and-support",
+      "feed_url": "https://profilesdeveloper.ucsf.edu/contact-and-support",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-08-15T12:11:08Z"
+  "fetched": "2026-08-22T20:20:02Z"
 }
