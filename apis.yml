@@ -60,213 +60,227 @@ created: '2026-06-03'
 modified: '2026-08-19'
 specificationVersion: '0.23'
 apis:
-  - aid: ucsf:profiles-json
-    name: UCSF Profiles JSON API
-    x-operator: institution
-    x-operator-evidence: >-
-      Host api.profiles.ucsf.edu is under the ucsf.edu registrable domain. The service, its data
-      and its developer documentation are operated by the UCSF Clinical and Translational Science
-      Institute. The underlying Profiles RNS software is open source; the running service is UCSF's.
-    description: >-
-      Open, unauthenticated JSON API (v2) over UCSF Profiles, the research-networking platform run
-      by UCSF CTSI, covering 8,000+ UCSF researchers, faculty and postdocs — name, school,
-      department, titles, ORCID iD, education and training, narrative, keywords, publications,
-      clinical trials, awards, and research activities and funding. GET requests return
-      application/json with CORS support; JSONP is supported via a callback parameter. A `source`
-      parameter identifying the calling application is required on every request, but it is an
-      attribution convention rather than a credential. UCSF asks callers to make contact before
-      production use, to add an acknowledgement, to refresh cached data at least weekly, and to
-      leave at least one second between calls. Notably, deprecation notices travel in the response
-      body itself via an `api_notes` field. Verified live 2026-08-19.
-    humanURL: https://profilesdeveloper.ucsf.edu/json-api
-    baseURL: https://api.profiles.ucsf.edu/json/v2/
-    tags: [ Research, Researcher Profiles, ORCID, Open Data, JSON, Publications ]
-    properties:
-      - type: OpenAPI
-        url: openapi/ucsf-profiles-json-openapi.yml
-      - type: JSONSchema
-        url: json-schema/ucsf-profile.json
-      - type: Examples
-        url: examples/ucsf-profiles-json-api-response.json
-      - type: Documentation
-        url: https://profilesdeveloper.ucsf.edu/json-api
-      - type: DeveloperPortal
-        url: https://profilesdeveloper.ucsf.edu/
-      - type: Support
-        url: https://profilesdeveloper.ucsf.edu/contact-and-support
-      - type: JSONLD
-        url: json-ld/ucsf-context.jsonld
-  - aid: ucsf:industry-documents-solr
-    name: UCSF Industry Documents Library Solr API
-    x-operator: institution
-    x-operator-evidence: >-
-      Host solr.idl.ucsf.edu is under the ucsf.edu registrable domain, and idl.ucsf.edu redirects
-      to www.industrydocuments.ucsf.edu. The CNAME target libckm.org is the UCSF Library Center for
-      Knowledge Management's own infrastructure domain, confirmed by the github.com/ucsf-ckm
-      organization ("UCSF Center for Knowledge Management"). No other institution in the
-      248-university cohort points at this host.
-    description: >-
-      Public, unauthenticated Apache Solr query interface over the UCSF Industry Documents Library,
-      an archive of 28,298,987 internal documents from the tobacco, drug, chemical, food, fossil
-      fuel and opioid industries, produced in litigation and preserved by the UCSF Library Center
-      for Knowledge Management. Documents are retrieved by eight-character ID or by Solr field query
-      with AND / OR / NOT and explicit parentheses, and serialized as xml, json, python, ruby, php or
-      csv. UCSF documents the interface in its "Industry Documents Data API v5" PDF. Two defects were
-      confirmed on 2026-08-19: the documented `rows` parameter is accepted and echoed back but not
-      honoured — the deployed page size is 1000 records, not the documented 100 — and the
-      documentation page UCSF links to is now a client-side route in a single-page application that
-      returns the same 200 shell for every path, so the authoritative PDF survives only in the
-      Internet Archive. Verified live 2026-08-19.
-    humanURL: https://www.industrydocuments.ucsf.edu/
-    baseURL: https://solr.idl.ucsf.edu/solr/ltdl3/
-    tags: [ Digital Archive, Search, Solr, Litigation Documents, Public Health, Open Data ]
-    properties:
-      - type: OpenAPI
-        url: openapi/ucsf-industry-documents-solr-openapi.yml
-      - type: JSONSchema
-        url: json-schema/ucsf-industry-document.json
-      - type: Examples
-        url: examples/ucsf-industry-documents-single-document.json
-      - type: Website
-        url: https://www.industrydocuments.ucsf.edu/
-      - type: Documentation
-        url: https://web.archive.org/web/20220301000000/https://www.industrydocuments.ucsf.edu/wp-content/uploads/2022/02/IndustryDocumentsDataAPI_v5.pdf
-      - type: JSONLD
-        url: json-ld/ucsf-industry-documents-context.jsonld
-  - aid: ucsf:incommon-idp
-    name: UCSF Identity Provider (Shibboleth / InCommon)
-    x-operator: institution
-    x-operator-evidence: >-
-      A SAML identity provider is institution-operated by definition — the entity asserts UCSF's
-      own users. UCSF self-publishes the metadata on its own host, https://dp.ucsf.edu/idp/shibboleth
-      (an EntitiesDescriptor named https://ucsf-federation.edu/metadata/myaccess-ucsf.xml, carrying
-      entityIDs urn:mace:incommon:ucsf.edu and https://dp.ucsf.edu/idp/shibboleth, with shibmd:Scope
-      ucsf.edu). The InCommon MDQ service redistributes a signed copy; the running IdP is UCSF's.
-    description: >-
-      UCSF's Shibboleth SAML 2.0 identity provider, registered in the InCommon Federation and
-      re-exported to eduGAIN. Signed, versioned, publicly retrievable federation metadata describing
-      SingleSignOnService and SingleLogoutService endpoints at dp.ucsf.edu across HTTP-Redirect,
-      HTTP-POST, HTTP-POST-SimpleSign and the Shibboleth 1.0 AuthnRequest binding, with shibmd:Scope
-      ucsf.edu declarations, an AttributeAuthorityDescriptor and an SPSSODescriptor. UCSF serves the
-      metadata itself at https://dp.ucsf.edu/idp/shibboleth and InCommon redistributes a signed copy. This is the most standards-conformant machine-readable artifact UCSF publishes,
-      and it is the education regime's `saml` and `shibboleth` domain standards in one document.
-      UCSF separately fronts interactive login with Okta at login.ucsf.edu; the federated entity
-      remains dp.ucsf.edu. Verified live 2026-08-19.
-    humanURL: https://it.ucsf.edu/
-    baseURL: https://dp.ucsf.edu/idp/shibboleth
-    tags: [ Identity Federation, SAML, Shibboleth, InCommon, eduGAIN, Authentication ]
-    properties:
-      - type: Authentication
-        url: authentication/ucsf-authentication.yml
-      - type: Metadata
-        url: authentication/ucsf-idp-self-published-metadata.xml
-      - type: Metadata
-        url: authentication/ucsf-incommon-saml-metadata.xml
-      - type: IdentityFederation
-        url: https://mdq.incommon.org/entities/urn%3Amace%3Aincommon%3Aucsf.edu
-      - type: Conformance
-        url: conformance/ucsf-education-standards-conformance.yml
-  - aid: ucsf:idl-content-api
-    name: UCSF Industry Documents Library Content API
-    x-operator: institution
-    x-operator-evidence: >-
-      Payload CMS deployment operated by the UCSF Library Center for Knowledge Management on its own
-      libckm.org infrastructure domain, serving the content layer of www.industrydocuments.ucsf.edu.
-      The CMS software is third-party; the deployment, the content and the operation are UCSF's. The
-      host is not under ucsf.edu, so this attribution rests on the CKM infrastructure evidence rather
-      than on the domain test alone.
-    description: >-
-      Publicly readable REST content API behind the Industry Documents Library website, exposing 320
-      editorial pages — collection guides, curated document sets, field-name references, dataset
-      listings, policies and release notes — as JSON. Undocumented and unversioned by UCSF; it exists
-      because the IDL site is a decoupled single-page application. Recorded as a real institutional
-      surface, but no derived OpenAPI is claimed for it because UCSF publishes no contract and makes
-      no stability commitment. Verified live 2026-08-19, returning 320 documents.
-    humanURL: https://www.industrydocuments.ucsf.edu/
-    baseURL: https://cms.libckm.org/api/
-    tags:
-    - content-api
-    - CMS
-    - Digital Archive
-    - JSON
-    tags_raw:
-    - Content API
-    - CMS
-    - Digital Archive
-    - JSON
-    properties:
-      - type: Website
-        url: https://www.industrydocuments.ucsf.edu/
-  - aid: ucsf:datashare-dryad
-    name: UCSF DataShare (Dryad)
-    x-operator: tenant
-    x-operator-evidence: >-
-      datashare.ucsf.edu is a UCSF-branded subdomain serving the Dryad application (page title
-      "Dryad | Publish and preserve your data"). The data and DOIs are UCSF's; the repository
-      software, the API and the DataCite integration are Dryad's and the California Digital
-      Library's. No Dryad contract is saved under this institution.
-    description: >-
-      UCSF's institutional research-data repository, delivered on the Dryad platform. 1,306 DataCite
-      DOIs carry a UCSF publisher string. Dryad operates a public REST API, but it is Dryad's
-      contract serving every Dryad customer, so it is recorded here as a tenant relationship rather
-      than as a UCSF API. Verified live 2026-08-19.
-    humanURL: https://datashare.ucsf.edu/
-    tags: [ Research Data, Repository, Dryad, DataCite, Tenant ]
-    properties:
-      - type: ResearchRepository
-        url: https://datashare.ucsf.edu/
-  - aid: ucsf:escholarship-oai
-    name: UCSF scholarly output via eScholarship OAI-PMH
-    x-operator: tenant
-    x-operator-evidence: >-
-      escholarship.org is operated by the California Digital Library for the whole University of
-      California system. UCSF is one named OAI-PMH set (`ucsf`) on a shared endpoint, not the
-      operator of it.
-    description: >-
-      UCSF's open-access scholarly output is harvestable as a named OAI-PMH set on the University of
-      California's eScholarship repository, returning oai_dc records with ark:/13030/ identifiers.
-      This satisfies the education regime's `oai-pmh` domain standard for UCSF's content, but the
-      OAI-PMH implementation belongs to the California Digital Library. Verified live 2026-08-19.
-    humanURL: https://escholarship.org/uc/ucsf
-    baseURL: https://escholarship.org/oai?verb=ListRecords&metadataPrefix=oai_dc&set=ucsf
-    tags: [ OAI-PMH, Open Access, Repository, Tenant, Harvesting ]
-    properties:
-      - type: Documentation
-        url: https://escholarship.org/oai?verb=Identify
-  - aid: ucsf:library-discovery
-    name: UCSF Library Discovery (Ex Libris Primo)
-    x-operator: tenant
-    x-operator-evidence: >-
-      search.library.ucsf.edu is a UCSF-branded subdomain running Ex Libris Primo. Any API is Ex
-      Libris's, published on developers.exlibrisgroup.com and shared by every Primo customer.
-    description: >-
-      UCSF Library's discovery layer, delivered on Ex Libris Primo. No UCSF-operated catalog API was
-      found; the Primo and Alma APIs are Ex Libris products and are not attributed to UCSF. Recorded
-      to make the library surface class explicit rather than to imply a UCSF contract. Verified live
-      2026-08-19.
-    humanURL: https://search.library.ucsf.edu/
-    tags: [ Library, Discovery, Primo, Ex Libris, Tenant ]
-    properties:
-      - type: LibraryCatalog
-        url: https://search.library.ucsf.edu/
-  - aid: ucsf:course-catalog
-    name: UCSF Course Catalog (CourseLeaf)
-    x-operator: tenant
-    x-operator-evidence: >-
-      coursecatalog.ucsf.edu is a UCSF-branded subdomain running Leepfrog's CourseLeaf catalog
-      product. CourseLeaf's ribbit/getcourse.rjs endpoint returned 404, so no course API is exposed
-      here at all.
-    description: >-
-      The 2026–27 UCSF course catalog, published through Leepfrog's CourseLeaf. No public course,
-      timetable or registrar API exists — the CourseLeaf JSON endpoints that some institutions leave
-      open are not exposed on this deployment, and UCSF's Office of the Registrar publishes no API.
-      As a graduate-and-professional-only campus, UCSF has none of the student-built timetable APIs
-      that undergraduate institutions in this cohort produce. Verified 2026-08-19.
-    humanURL: https://coursecatalog.ucsf.edu/
-    tags: [ Course Catalog, Registrar, CourseLeaf, Tenant ]
-    properties:
-      - type: CourseCatalog
-        url: https://coursecatalog.ucsf.edu/
+- aid: ucsf:incommon-idp
+  name: UCSF Identity Provider (Shibboleth / InCommon)
+  x-operator: institution
+  x-operator-evidence: >-
+    A SAML identity provider is institution-operated by definition — the entity asserts UCSF's own users.
+    UCSF self-publishes the metadata on its own host, https://dp.ucsf.edu/idp/shibboleth (an EntitiesDescriptor
+    named https://ucsf-federation.edu/metadata/myaccess-ucsf.xml, carrying entityIDs urn:mace:incommon:ucsf.edu
+    and https://dp.ucsf.edu/idp/shibboleth, with shibmd:Scope ucsf.edu). The InCommon MDQ service redistributes
+    a signed copy; the running IdP is UCSF's.
+  description: >-
+    UCSF's Shibboleth SAML 2.0 identity provider, registered in the InCommon Federation and re-exported
+    to eduGAIN. Signed, versioned, publicly retrievable federation metadata describing SingleSignOnService
+    and SingleLogoutService endpoints at dp.ucsf.edu across HTTP-Redirect, HTTP-POST, HTTP-POST-SimpleSign
+    and the Shibboleth 1.0 AuthnRequest binding, with shibmd:Scope ucsf.edu declarations, an AttributeAuthorityDescriptor
+    and an SPSSODescriptor. UCSF serves the metadata itself at https://dp.ucsf.edu/idp/shibboleth and
+    InCommon redistributes a signed copy. This is the most standards-conformant machine-readable artifact
+    UCSF publishes, and it is the education regime's `saml` and `shibboleth` domain standards in one document.
+    UCSF separately fronts interactive login with Okta at login.ucsf.edu; the federated entity remains
+    dp.ucsf.edu. Verified live 2026-08-19.
+  humanURL: https://it.ucsf.edu/
+  baseURL: https://dp.ucsf.edu/idp/shibboleth
+  tags:
+  - Identity Federation
+  - SAML
+  - Shibboleth
+  - InCommon
+  - eduGAIN
+  - Authentication
+  properties:
+  - type: Authentication
+    url: authentication/ucsf-authentication.yml
+  - type: Metadata
+    url: authentication/ucsf-idp-self-published-metadata.xml
+  - type: Metadata
+    url: authentication/ucsf-incommon-saml-metadata.xml
+  - type: IdentityFederation
+    url: https://mdq.incommon.org/entities/urn%3Amace%3Aincommon%3Aucsf.edu
+  - type: Conformance
+    url: conformance/ucsf-education-standards-conformance.yml
+- aid: ucsf:idl-content-api
+  name: UCSF Industry Documents Library Content API
+  x-operator: institution
+  x-operator-evidence: >-
+    Payload CMS deployment operated by the UCSF Library Center for Knowledge Management on its own libckm.org
+    infrastructure domain, serving the content layer of www.industrydocuments.ucsf.edu. The CMS software
+    is third-party; the deployment, the content and the operation are UCSF's. The host is not under ucsf.edu,
+    so this attribution rests on the CKM infrastructure evidence rather than on the domain test alone.
+  description: >-
+    Publicly readable REST content API behind the Industry Documents Library website, exposing 320 editorial
+    pages — collection guides, curated document sets, field-name references, dataset listings, policies
+    and release notes — as JSON. Undocumented and unversioned by UCSF; it exists because the IDL site
+    is a decoupled single-page application. Recorded as a real institutional surface, but no derived OpenAPI
+    is claimed for it because UCSF publishes no contract and makes no stability commitment. Verified live
+    2026-08-19, returning 320 documents.
+  humanURL: https://www.industrydocuments.ucsf.edu/
+  baseURL: https://cms.libckm.org/api/
+  tags:
+  - content-api
+  - CMS
+  - Digital Archive
+  - JSON
+  tags_raw:
+  - Content API
+  - CMS
+  - Digital Archive
+  - JSON
+  properties:
+  - type: Website
+    url: https://www.industrydocuments.ucsf.edu/
+- aid: ucsf:datashare-dryad
+  name: UCSF DataShare (Dryad)
+  x-operator: tenant
+  x-operator-evidence: >-
+    datashare.ucsf.edu is a UCSF-branded subdomain serving the Dryad application (page title "Dryad |
+    Publish and preserve your data"). The data and DOIs are UCSF's; the repository software, the API and
+    the DataCite integration are Dryad's and the California Digital Library's. No Dryad contract is saved
+    under this institution.
+  description: >-
+    UCSF's institutional research-data repository, delivered on the Dryad platform. 1,306 DataCite DOIs
+    carry a UCSF publisher string. Dryad operates a public REST API, but it is Dryad's contract serving
+    every Dryad customer, so it is recorded here as a tenant relationship rather than as a UCSF API. Verified
+    live 2026-08-19.
+  humanURL: https://datashare.ucsf.edu/
+  tags:
+  - Research Data
+  - Repository
+  - Dryad
+  - DataCite
+  - Tenant
+  properties:
+  - type: ResearchRepository
+    url: https://datashare.ucsf.edu/
+- aid: ucsf:escholarship-oai
+  name: UCSF scholarly output via eScholarship OAI-PMH
+  x-operator: tenant
+  x-operator-evidence: >-
+    escholarship.org is operated by the California Digital Library for the whole University of California
+    system. UCSF is one named OAI-PMH set (`ucsf`) on a shared endpoint, not the operator of it.
+  description: >-
+    UCSF's open-access scholarly output is harvestable as a named OAI-PMH set on the University of California's
+    eScholarship repository, returning oai_dc records with ark:/13030/ identifiers. This satisfies the
+    education regime's `oai-pmh` domain standard for UCSF's content, but the OAI-PMH implementation belongs
+    to the California Digital Library. Verified live 2026-08-19.
+  humanURL: https://escholarship.org/uc/ucsf
+  baseURL: https://escholarship.org/oai?verb=ListRecords&metadataPrefix=oai_dc&set=ucsf
+  tags:
+  - OAI-PMH
+  - Open Access
+  - Repository
+  - Tenant
+  - Harvesting
+  properties:
+  - type: Documentation
+    url: https://escholarship.org/oai?verb=Identify
+- aid: ucsf:library-discovery
+  name: UCSF Library Discovery (Ex Libris Primo)
+  x-operator: tenant
+  x-operator-evidence: >-
+    search.library.ucsf.edu is a UCSF-branded subdomain running Ex Libris Primo. Any API is Ex Libris's,
+    published on developers.exlibrisgroup.com and shared by every Primo customer.
+  description: >-
+    UCSF Library's discovery layer, delivered on Ex Libris Primo. No UCSF-operated catalog API was found;
+    the Primo and Alma APIs are Ex Libris products and are not attributed to UCSF. Recorded to make the
+    library surface class explicit rather than to imply a UCSF contract. Verified live 2026-08-19.
+  humanURL: https://search.library.ucsf.edu/
+  tags:
+  - Library
+  - Discovery
+  - Primo
+  - Ex Libris
+  - Tenant
+  properties:
+  - type: LibraryCatalog
+    url: https://search.library.ucsf.edu/
+- aid: ucsf:course-catalog
+  name: UCSF Course Catalog (CourseLeaf)
+  x-operator: tenant
+  x-operator-evidence: >-
+    coursecatalog.ucsf.edu is a UCSF-branded subdomain running Leepfrog's CourseLeaf catalog product.
+    CourseLeaf's ribbit/getcourse.rjs endpoint returned 404, so no course API is exposed here at all.
+  description: >-
+    The 2026–27 UCSF course catalog, published through Leepfrog's CourseLeaf. No public course, timetable
+    or registrar API exists — the CourseLeaf JSON endpoints that some institutions leave open are not
+    exposed on this deployment, and UCSF's Office of the Registrar publishes no API. As a graduate-and-professional-only
+    campus, UCSF has none of the student-built timetable APIs that undergraduate institutions in this
+    cohort produce. Verified 2026-08-19.
+  humanURL: https://coursecatalog.ucsf.edu/
+  tags:
+  - Course Catalog
+  - Registrar
+  - CourseLeaf
+  - Tenant
+  properties:
+  - type: CourseCatalog
+    url: https://coursecatalog.ucsf.edu/
+- aid: ucsf:ucsf-documents-api
+  name: University of California, San Francisco Documents API
+  description: Query the IDL document corpus by identifier or by Solr query syntax.
+  humanURL: https://profilesdeveloper.ucsf.edu/json-api
+  baseURL: https://api.profiles.ucsf.edu/json/v2/
+  tags:
+  - Documents
+  properties:
+  - type: OpenAPI
+    url: openapi/ucsf-documents-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ucsf-profile.json
+  - type: Examples
+    url: examples/ucsf-profiles-json-api-response.json
+  - type: Documentation
+    url: https://profilesdeveloper.ucsf.edu/json-api
+  - type: DeveloperPortal
+    url: https://profilesdeveloper.ucsf.edu/
+  - type: Support
+    url: https://profilesdeveloper.ucsf.edu/contact-and-support
+  - type: JSONLD
+    url: json-ld/ucsf-context.jsonld
+  - type: JSONSchema
+    url: json-schema/ucsf-industry-document.json
+  - type: Examples
+    url: examples/ucsf-industry-documents-single-document.json
+  - type: Website
+    url: https://www.industrydocuments.ucsf.edu/
+  - type: Documentation
+    url: >-
+      https://web.archive.org/web/20220301000000/https://www.industrydocuments.ucsf.edu/wp-content/uploads/2022/02/IndustryDocumentsDataAPI_v5.pdf
+  - type: JSONLD
+    url: json-ld/ucsf-industry-documents-context.jsonld
+- aid: ucsf:ucsf-profiles-api
+  name: University of California, San Francisco Profiles API
+  description: Look up a UCSF person's public research profile.
+  humanURL: https://profilesdeveloper.ucsf.edu/json-api
+  baseURL: https://api.profiles.ucsf.edu/json/v2/
+  tags:
+  - Profiles
+  properties:
+  - type: OpenAPI
+    url: openapi/ucsf-profiles-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/ucsf-profile.json
+  - type: Examples
+    url: examples/ucsf-profiles-json-api-response.json
+  - type: Documentation
+    url: https://profilesdeveloper.ucsf.edu/json-api
+  - type: DeveloperPortal
+    url: https://profilesdeveloper.ucsf.edu/
+  - type: Support
+    url: https://profilesdeveloper.ucsf.edu/contact-and-support
+  - type: JSONLD
+    url: json-ld/ucsf-context.jsonld
+  - type: JSONSchema
+    url: json-schema/ucsf-industry-document.json
+  - type: Examples
+    url: examples/ucsf-industry-documents-single-document.json
+  - type: Website
+    url: https://www.industrydocuments.ucsf.edu/
+  - type: Documentation
+    url: >-
+      https://web.archive.org/web/20220301000000/https://www.industrydocuments.ucsf.edu/wp-content/uploads/2022/02/IndustryDocumentsDataAPI_v5.pdf
+  - type: JSONLD
+    url: json-ld/ucsf-industry-documents-context.jsonld
 common:
   - type: Website
     url: https://www.ucsf.edu/
