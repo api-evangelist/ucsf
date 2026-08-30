@@ -1,0 +1,49 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 4,
+    "params": {
+      "q": "id:kylw0221",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 1,
+    "start": 0,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "id": "kylw0221",
+        "tid": "ctg37j00",
+        "collection": [
+          "Depositions and Trial Testimony (DATTA)"
+        ],
+        "collectioncode": [
+          "da"
+        ],
+        "availability": [
+          "public",
+          "no restrictions"
+        ],
+        "case": [
+          "Engle Progeny; Andy R. Allen, Sr. and Patricia L. Allen, Case No. 16-2007-CA-008311-BXXX-MA, Case No. 2008-CA-15000"
+        ],
+        "title": "In Re: Engle Progeny Cases Tobacco Litigation. Pertains to Andy R. Allen, Sr., as Personal Representative for the Estate of Patricia L. Allen. Jury Trial",
+        "documentdate": "2014 November 25",
+        "type": [
+          "trial transcript"
+        ],
+        "pages": 155,
+        "witness": "Figlar, James, Ph.D.",
+        "dateaddeducsf": "2015 March 05"
+      }
+    ]
+  },
+  "_provenance": {
+    "generated": "2026-08-19",
+    "method": "probed",
+    "source": "https://solr.idl.ucsf.edu/solr/ltdl3/query?q=id:kylw0221&wt=json",
+    "status": 200,
+    "note": "Live response captured 2026-08-19, unmodified. Matches the document UCSF uses as the worked example in its own Industry Documents Data API v5 documentation."
+  }
+}

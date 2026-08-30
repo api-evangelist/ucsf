@@ -1,0 +1,446 @@
+{
+  "_provenance": {
+    "generated": "2026-08-19",
+    "method": "probed",
+    "source": "https://api.profiles.ucsf.edu/json/v2/?source=apievangelist.com&ProfilesURLName=kirsten.bibbins-domingo",
+    "status": 200,
+    "note": "Live response captured 2026-08-19. Long arrays truncated to the first two members; field shape unmodified."
+  },
+  "Profiles": [
+    {
+      "NIHGrants_beta": [
+        {
+          "NIHProjectNumber": "R25HL126146",
+          "NIHFiscalYear": 2029,
+          "api_notes": "Deprecated, use ResearchActivitiesAndFunding instead. The fiscal year may be off.",
+          "Title": "UCSF Research in Implementation Science for Equity (RISE)"
+        },
+        {
+          "NIHProjectNumber": "OT2OD025276",
+          "NIHFiscalYear": 2026,
+          "api_notes": "Deprecated, use ResearchActivitiesAndFunding instead. The fiscal year may be off.",
+          "Title": "PRIDEnet for the All of Us Research Program"
+        }
+      ],
+      "Twitter_beta": null,
+      "Keywords": [
+        "Coronary Disease",
+        "Hypertension",
+        "Sodium, Dietary",
+        "Cost-Benefit Analysis",
+        "Preventive Health Services",
+        "Primary Prevention",
+        "Biomedical Research",
+        "Editorial Policies",
+        "Antihypertensive Agents",
+        "Population Health",
+        "Blood Pressure",
+        "Cardiovascular Diseases",
+        "Mass Screening",
+        "Policy",
+        "Advisory Committees"
+      ],
+      "Department": "Epidemiology & Biostatistics",
+      "ResearchActivitiesAndFunding": [
+        {
+          "EndDate": "2029-02-28",
+          "Sponsor": "NIH",
+          "Role": "Principal Investigator",
+          "SponsorAwardID": "R25HL126146",
+          "StartDate": "2014-09-15",
+          "Title": "UCSF Research in Implementation Science for Equity (RISE)"
+        },
+        {
+          "EndDate": "2026-06-30",
+          "Sponsor": "NIH",
+          "Role": "Co-Principal Investigator",
+          "SponsorAwardID": "OT2OD025276",
+          "StartDate": "2017-07-23",
+          "Title": "PRIDEnet for the All of Us Research Program"
+        }
+      ],
+      "ORCID": "0000-0002-8962-0622",
+      "WebLinks_beta": [
+        {
+          "URL": "https://ctsi.ucsf.edu/",
+          "Label": "UCSF Clinical and Translational Sciences Institute"
+        },
+        {
+          "URL": "http://ctsi.ucsf.edu/our-work/k-scholars-program",
+          "Label": "UCSF CTSI K Scholars Program"
+        },
+        {
+          "URL": "https://pophealth.ucsf.edu",
+          "Label": "UCSF Population Health and Health Equity"
+        },
+        {
+          "URL": "https://X.com/KBibbinsDomingo",
+          "Label": "Posts on X KBibbinsDomingo"
+        },
+        {
+          "URL": "http://www.bringitdownstudy.org/",
+          "Label": "Bring It Down Stroke Study"
+        },
+        {
+          "URL": "https://epibiostat.ucsf.edu/",
+          "Label": "UCSF Department of Epidemiology and Biostatistics"
+        },
+        {
+          "URL": "http://cvp.ucsf.edu/",
+          "Label": "UCSF Center for Vulnerable Populations at San Francisco General Hospital"
+        },
+        {
+          "URL": "https://healthatlas.ucsf.edu",
+          "Label": "UCSF Health Atlas"
+        }
+      ],
+      "GlobalHealth_beta": {},
+      "School": "School of Medicine",
+      "Narrative": "Kirsten Bibbins-Domingo, PhD, MD, MAS is the Lee Goldman, MD Endowed Professor of Medicine and Professor of Epidemiology and Biostatistics.  She is currently the 17th Editor in Chief of the Journal of the American Medical Association (JAMA) and the JAMA Network.\n\nDr. Bibbins-Domingo has previously served as the inaugural Vice Dean for Population Health and Health Equity in the UCSF School of Medicine.  She also chaired the Department of Epidemiology and Biostatistics from 2017-2022.  Dr. Bibbins-Domingo co-founded the UCSF Center for Vulnerable Populations at Zuckerberg San Francisco General Hospital that generates actionable research to increase health equity and reduce health disparities in at-risk populations in the San Francisco Bay Area, California, and nationally.  \n\nDr. Bibbins-Domingo is a general internist, cardiovascular disease epidemiologist, and a national leader in prevention and interventions to address health disparities. She had been a long-standing NIH-funded researcher who used observational studies, pragmatic trials, and simulation modeling to examine effective clinical, public health, and policy interventions aimed at prevention. \n\nDr. Bibbins-Domingo was a member of the US Preventive Services Task Force from 2010-2017 and led the Task Force as the vice-chair and chair from 2014-2017. She is an inducted member of the American Society for Clinical Investigation, the Association of American Physicians, the National Academy of Medicine, and the American Academy of Arts and Sciences.",
+      "Titles": [
+        "Professor",
+        "Lee Goldman, MD, Endowed Chair in Medicine"
+      ],
+      "Name": "Kirsten Bibbins-Domingo, PhD, MD, MAS",
+      "ProfilesURL": "https://profiles.ucsf.edu/kirsten.bibbins-domingo",
+      "FreetextKeywords": [
+        "Hypertension",
+        "Health disparities",
+        "Simulation Modeling",
+        "Health of young adults",
+        "Cardiovascular disease",
+        "Kidney disease",
+        "Chronic disease prevention",
+        "Implementation Science"
+      ],
+      "Address": {
+        "Address2": "San Francisco, CA 94158",
+        "Address4": null,
+        "Latitude": 37.7623117,
+        "Telephone": null,
+        "Fax": null,
+        "Longitude": -122.4598881,
+        "Address3": null,
+        "Address1": "550 16th Street"
+      },
+      "ClinicalTrials": [],
+      "SlideShare_beta": [],
+      "Videos": [
+        {
+          "label": "A Life in Medicine: People Shaping Healthcare Today",
+          "url": "https://www.youtube.com/watch?v=lzivJjGwPdU"
+        },
+        {
+          "label": "CVP turns 10",
+          "url": "https://www.youtube.com/watch?v=1uomfJryEFM"
+        }
+      ],
+      "LastName": "Bibbins-Domingo",
+      "CollaborationInterests": {},
+      "Title": "Professor",
+      "Education_Training": [
+        {
+          "department_or_school": "Diversity, Equity, and Inclusion Champion Training",
+          "location": "San Francisco, CA",
+          "organization": "University of California",
+          "end_date": "2020",
+          "start_date": null,
+          "degree": null
+        },
+        {
+          "department_or_school": "Masters in Clinical Research",
+          "location": null,
+          "organization": "UCSF, Epidemiology and Biostatistics",
+          "end_date": "2004",
+          "start_date": null,
+          "degree": "MAS"
+        },
+        {
+          "department_or_school": "Internal Medicine",
+          "location": null,
+          "organization": "UCSF, Medicine",
+          "end_date": "2001",
+          "start_date": null,
+          "degree": "Residency"
+        },
+        {
+          "department_or_school": "Medicine",
+          "location": null,
+          "organization": "UCSF, Medicine",
+          "end_date": "1999",
+          "start_date": null,
+          "degree": "MD"
+        },
+        {
+          "department_or_school": "Biochemistry",
+          "location": null,
+          "organization": "UCSF, Biochemistry",
+          "end_date": "1994",
+          "start_date": null,
+          "degree": "PhD"
+        },
+        {
+          "department_or_school": "Molecular Biology & Princeton School of Public and International Affairs",
+          "location": null,
+          "organization": "Princeton University",
+          "end_date": "1987",
+          "start_date": null,
+          "degree": "AB"
+        }
+      ],
+      "AwardOrHonors": [
+        {
+          "Summary": "Elected to membership, American Academy of Arts and Sciences, 2022",
+          "AwardLabel": "Elected to membership",
+          "AwardConferredBy": "American Academy of Arts and Sciences",
+          "AwardStartDate": "2022",
+          "AwardEndDate": null
+        },
+        {
+          "Summary": "Beverlee A. Myers Award for Excellence in Public Health, California Department of Public Health, 2022",
+          "AwardLabel": "Beverlee A. Myers Award for Excellence in Public Health",
+          "AwardConferredBy": "California Department of Public Health",
+          "AwardStartDate": "2022",
+          "AwardEndDate": null
+        }
+      ],
+      "PhotoURL": "https://researcherprofiles.org/profile/Modules/CustomViewPersonGeneralInfo/PhotoHandler.ashx?NodeID=188854",
+      "GlobalHealth": {
+        "Centers": [
+          "PRISE Center"
+        ],
+        "Interests": [
+          "Cardiovascular health"
+        ],
+        "Projects": [],
+        "Locations": [
+          "California",
+          "Latin America and the Caribbean",
+          "Sub-Saharan Africa"
+        ]
+      },
+      "PublicationCount": 468,
+      "FacultyMentoring": {
+        "Narrative": null,
+        "Types": []
+      },
+      "Email": null,
+      "MediaLinks_beta": [
+        {
+          "link_name": "Many Latinos Couldn't Stay Home. Now Virus Cases Are Soaring in Their Communities",
+          "link_date": "06/26/2020",
+          "link_url": "https://www.nytimes.com/2020/06/26/us/corona-virus-latinos.html"
+        },
+        {
+          "link_name": "Q&A With Director of UCSF's K Scholars Program",
+          "link_date": "06/04/2013",
+          "link_url": "http://www.ucsf.edu/news/2013/06/106411/qa-co-director-ucsf-k-scholars-program"
+        },
+        {
+          "link_name": "Six new trustees, including Jemison '18, elected to Board",
+          "link_date": "07/02/2018",
+          "link_url": "http://www.dailyprincetonian.com/article/2018/07/new-trustees"
+        },
+        {
+          "link_name": "S.F. State receives $17 million grant to help minorities",
+          "link_date": "10/23/2014",
+          "link_url": "http://www.sfgate.com/education/article/S-F-State-receives-17-million-grant-to-help-5843661.php"
+        },
+        {
+          "link_name": "Statin Use in Elderly Would Prevent Disease But Could Carry Considerable Side Effects",
+          "link_date": "04/20/2015",
+          "link_url": "http://www.ucsf.edu/news/2015/04/125236/statin-use-elderly-would-prevent-disease-could-carry-considerable-side-effects"
+        },
+        {
+          "link_name": "POLITICS APRIL 28, 2020 Many Wealthy Parents Won't Send Kids Back to School This Fall. That's a Disaster Waiting to Happen.",
+          "link_date": "04/28/2020",
+          "link_url": "https://www.motherjones.com/politics/2020/04/many-wealthy-parents-wont-send-kids-back-to-school-this-fall-thats-a-disaster-waiting-to-happen/"
+        },
+        {
+          "link_name": "In a first, aspirin is recommended to fight a form of cancer",
+          "link_date": "09/15/2016",
+          "link_url": "http://well.blogs.nytimes.com/2015/09/14/in-a-first-aspirin-is-recommended-to-fight-a-form-of-cancer/?_r=0"
+        },
+        {
+          "link_name": "KQED Forum with Michael Krasny",
+          "link_date": "04/17/2017",
+          "link_url": "https://ww2.kqed.org/forum/2017/04/14/new-guidelines-let-patients-opt-in-to-controversial-prostate-cancer-screening/"
+        },
+        {
+          "link_name": "Californians are losing their fear of the coronavirus, setting the stage for disaster",
+          "link_date": "07/03/2020",
+          "link_url": "https://www.latimes.com/california/story/2020-07-03/how-california-went-from-coronavirus-success-story-to-sitting-on-the-precipice-of-disaster"
+        },
+        {
+          "link_name": "New breast cancer screening guidelines explained",
+          "link_date": "04/29/2015",
+          "link_url": "http://www.washingtonpost.com/news/to-your-health/wp/2015/04/29/new-breast-cancer-screening-guidelines-explained/"
+        },
+        {
+          "link_name": "Obese Young Adults Prone to Binging, Purging",
+          "link_date": "06/12/2018",
+          "link_url": "https://health.usnews.com/health-care/articles/2018-06-12/obese-young-adults-prone-to-binging-purging"
+        },
+        {
+          "link_name": "Reducing Sodium in American Diet Would Save Hundreds of Thousands of Lives",
+          "link_date": "02/11/2013",
+          "link_url": "http://www.ucsf.edu/news/2013/02/13516/reducing-sodium-american-diet-would-save-hundreds-thousands-lives"
+        },
+        {
+          "link_name": "Experts Predict Second Wave For Coronavirus: Will College Campuses Really Reopen In The Fall?",
+          "link_date": "05/06/2020",
+          "link_url": "https://www.forbes.com/sites/chriswestfall/2020/05/06/experts-predict-second-wave-for-coronavirus-will-college-campuses-really-reopen-in-the-fall/#3d45be6c4ffe"
+        },
+        {
+          "link_name": "Bay Area's People to Watch in 2014",
+          "link_date": "01/05/2014",
+          "link_url": "http://www.sfgate.com/bayarea/article/Bay-Area-s-People-to-Watch-in-2014-5114765.php"
+        },
+        {
+          "link_name": "The Covid-19 warriors at UCSF are often female, always fierce and unusually diverse",
+          "link_date": "03/11/2021",
+          "link_url": "https://missionlocal.org/2021/03/the-covid-warriors-at-ucsf-are-often-female-always-fierce-and-unusually-diverse/"
+        },
+        {
+          "link_name": "Coronavirus: Who's getting sick in California? State releases partial race-based data",
+          "link_date": "04/09/2020",
+          "link_url": "https://www.sfchronicle.com/health/article/Coronavirus-Who-s-getting-sick-in-California-15188672.php"
+        },
+        {
+          "link_name": "Cost of New Cholesterol Drug Unsustainable",
+          "link_date": "08/26/2016",
+          "link_url": "https://www.ucsf.edu/news/2016/08/403891/cost-new-cholesterol-drugs-unsustainable-says-study"
+        },
+        {
+          "link_name": "UCSF Researchers Launch Landmark Study of LGBTQ Community Health",
+          "link_date": "06/25/2015",
+          "link_url": "https://www.ucsf.edu/news/2015/06/130631/ucsf-researchers-launch-landmark-study-lgbtq-community-health"
+        },
+        {
+          "link_name": "KQED The Bay Podcast",
+          "link_date": "04/13/2020",
+          "link_url": "https://www.kqed.org/news/11812000/why-we-need-race-ethnicity-and-language-data-to-beat-covid-19"
+        },
+        {
+          "link_name": "What COVID-19 patients young and old can teach us about the coronavirus",
+          "link_date": "05/08/2020",
+          "link_url": "https://www.latimes.com/science/story/2020-05-08/what-younger-covid-19-patients-can-teach-us-about-the-coronavirus"
+        },
+        {
+          "link_name": "UCSF to Lead Gathering of Important Health Information for Sexual, Gender Minorities",
+          "link_date": "08/22/2017",
+          "link_url": "https://www.ucsf.edu/news/2017/08/408116/ucsf-lead-gathering-important-health-information-sexual-gender-minorities"
+        },
+        {
+          "link_name": "How Many Lives Could a Soda Tax Save?",
+          "link_date": "01/09/2012",
+          "link_url": "http://www.ucsf.edu/news/2012/01/11267/how-many-lives-could-soda-tax-save"
+        },
+        {
+          "link_name": "KGO 7 News",
+          "link_date": "04/08/2020",
+          "link_url": "https://abc7news.com/coronavirus-update-cases-us-covid-19/6088253/"
+        },
+        {
+          "link_name": "The most definitive accounting of leaders and influencers in the life sciences",
+          "link_date": "2/22/2022",
+          "link_url": "https://www.statnews.com/status-list/2022/"
+        },
+        {
+          "link_name": "SFSU and UCSF Awarded $17 Million to Increase Diversity in the Biomedical",
+          "link_date": "11/10/2014",
+          "link_url": "http://ctsi.ucsf.edu/news/about-ctsi/sfsu-and-ucsf-awarded-17-million-increase-diversity-biomedical-workforce"
+        },
+        {
+          "link_name": "COVID-19 Rates Highest South-of-Market, Bayview",
+          "link_date": "06/05/2020",
+          "link_url": "https://www.potreroview.net/covid-19-rates-highest-south-of-market-bayview/"
+        },
+        {
+          "link_name": "Cardiovascular disease epidemiologist named JAMA\u2019s new top editor",
+          "link_date": "4/13/2022",
+          "link_url": "https://www.ama-assn.org/about/leadership/cardiovascular-disease-epidemiologist-named-jama-s-new-top-editor"
+        },
+        {
+          "link_name": "Why Black & LatinX Americans are suffering more from COVID-19",
+          "link_date": "07/07/2020",
+          "link_url": "https://www.pbs.org/newshour/show/how-federal-response-has-failed-to-address-racial-disparities-in-pandemics-toll"
+        },
+        {
+          "link_name": "Mission Local",
+          "link_date": "04/16/2020",
+          "link_url": "https://missionlocal.org/2020/04/ucsfs-noon-grand-rounds-a-slow-reopening-racial-disparities-and-no-quick-remedies/"
+        },
+        {
+          "link_name": "In Decade Since Founding, UCSF's Center for Vulnerable Populations Has Innovated Research, Care",
+          "link_date": "02/07/2017",
+          "link_url": "https://www.ucsf.edu/news/2017/02/405736/decade-founding-ucsfs-center-vulnerable-populations-has-innovated-research-care"
+        },
+        {
+          "link_name": "Do soda taxes work? Experts look to Mexico",
+          "link_date": "11/01/2016",
+          "link_url": "http://www.cnn.com/2016/11/01/health/soda-tax-benefits-mexico/index.html"
+        },
+        {
+          "link_name": "Op-Ed: How the pandemic divided California in two",
+          "link_date": "08/16/2020",
+          "link_url": "https://www.latimes.com/opinion/story/2020-08-16/coronavirus-cases-california-inequality"
+        },
+        {
+          "link_name": "GeriPal",
+          "link_date": "12/19/2019",
+          "link_url": "https://www.geripal.org/2019/12/integrating-social-care-into-health.html"
+        },
+        {
+          "link_name": "Undergraduates Get Hands-On Experience with Clinical Research",
+          "link_date": "09/04/2012",
+          "link_url": "http://www.ucsf.edu/news/2012/09/12662/undergraduates-get-hands-experience-clinical-research"
+        }
+      ],
+      "Publications": [
+        {
+          "AuthorList": "Huang AJ, Bibbins-Domingo K",
+          "PublicationTitle": "Huang AJ, Bibbins-Domingo K. A Love Letter to Clinical Trials: Introducing JAMA+ Trials. JAMA. 2026 05 12; 335(18):1581-1582.",
+          "Year": 2026,
+          "Date": "2026-05-12",
+          "Publication": "JAMA",
+          "PublicationSource": [
+            {
+              "PMID": "41984463",
+              "PublicationSourceURL": "http://www.ncbi.nlm.nih.gov/pubmed/41984463",
+              "PublicationSourceName": "PubMed"
+            }
+          ],
+          "Title": "A Love Letter to Clinical Trials: Introducing JAMA+ Trials.",
+          "PublicationCategory": null,
+          "Claimed": null,
+          "Featured": null,
+          "PublicationID": "https://researcherprofiles.org/profile/771884352",
+          "PublicationMedlineTA": "JAMA"
+        },
+        {
+          "AuthorList": "Bibbins-Domingo K, Christiansen SL, Curfman G, Flanagin A, Park H",
+          "PublicationTitle": "Bibbins-Domingo K, Christiansen SL, Curfman G, Flanagin A, Park H. 2025 Year in Review and Vision for the Path Ahead. JAMA. 2026 May 05; 335(17):1487-1490.",
+          "Year": 2026,
+          "Date": "2026-05-05",
+          "Publication": "JAMA",
+          "PublicationSource": [
+            {
+              "PMID": "41973540",
+              "PublicationSourceURL": "http://www.ncbi.nlm.nih.gov/pubmed/41973540",
+              "PublicationSourceName": "PubMed"
+            }
+          ],
+          "Title": "2025 Year in Review and Vision for the Path Ahead.",
+          "PublicationCategory": null,
+          "Claimed": null,
+          "Featured": null,
+          "PublicationID": "https://researcherprofiles.org/profile/774760607",
+          "PublicationMedlineTA": "JAMA"
+        }
+      ],
+      "FirstName": "Kirsten"
+    }
+  ],
+  "api_notes": "To maximize performance, we are providing recently-cached data. This data was cached on Wed Aug 19 04:13:11 2026"
+}

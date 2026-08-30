@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ucsf/main/json-schema/ucsf-profile.json",
+  "title": "UCSF Profiles Person",
+  "x-provenance": {
+    "generated": "2026-08-19",
+    "method": "derived",
+    "source": [
+      "https://profilesdeveloper.ucsf.edu/json-api",
+      "https://api.profiles.ucsf.edu/json/v2/?source=apievangelist.com&ProfilesURLName=kirsten.bibbins-domingo"
+    ],
+    "x-operator": "institution",
+    "note": "Derived by API Evangelist from UCSF's own developer documentation and a live probed response. UCSF publishes no JSON Schema."
+  },
+  "type": "object",
+  "required": [
+    "Name",
+    "ProfilesURL"
+  ],
+  "properties": {
+    "Name": {
+      "type": "string",
+      "description": "Display name including post-nominals."
+    },
+    "FirstName": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Titles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "School": {
+      "type": "string",
+      "description": "UCSF school, e.g. School of Medicine."
+    },
+    "Department": {
+      "type": "string"
+    },
+    "Address": {
+      "type": "object"
+    },
+    "Email": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "PhotoURL": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "ProfilesURL": {
+      "type": "string",
+      "format": "uri"
+    },
+    "ORCID": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$",
+      "description": "ORCID iD. Education-regime domain standard `orcid`.",
+      "examples": [
+        "0000-0002-8962-0622"
+      ]
+    },
+    "Narrative": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "FreetextKeywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "Education_Training": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "PublicationCount": {
+      "type": [
+        "integer",
+        "string"
+      ]
+    },
+    "Publications": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "ClinicalTrials": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "ResearchActivitiesAndFunding": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "AwardOrHonors": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "CollaborationInterests": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "FacultyMentoring": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "GlobalHealth": {
+      "type": [
+        "object",
+        "array",
+        "null"
+      ]
+    },
+    "GlobalHealth_beta": {
+      "type": [
+        "object",
+        "array",
+        "null"
+      ]
+    },
+    "NIHGrants_beta": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "deprecated": true,
+      "description": "Deprecated by UCSF in favour of ResearchActivitiesAndFunding."
+    },
+    "MediaLinks_beta": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "SlideShare_beta": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "Twitter_beta": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "Videos": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "WebLinks_beta": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

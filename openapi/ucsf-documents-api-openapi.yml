@@ -1,0 +1,214 @@
+openapi: 3.2.0
+info:
+  title: UCSF Industry Library Solr Documents API
+  version: '5'
+  description: Public, unauthenticated Apache Solr query interface over the UCSF Industry Documents Library (IDL) — an archive of 28.2 million internal documents from the tobacco, drug, chemical, food, fossil fuel and opioid industries, produced in litigation and preserved by the UCSF Library Center for Knowledge Management (CKM). The interface is documented by UCSF in "Industry Documents Data API v5" and is queried directly against the IDL Solr server. This OpenAPI description is DERIVED by API Evangelist from that UCSF documentation plus live probed responses; UCSF does not publish an OpenAPI document.
+  termsOfService: https://www.industrydocuments.ucsf.edu/copyright/
+  contact:
+    name: UCSF Industry Documents Library
+    url: https://www.industrydocuments.ucsf.edu/
+  license:
+    name: UCSF Copyright and Fair Use statement
+    url: https://www.industrydocuments.ucsf.edu/copyright/
+  x-operator: institution
+  x-operator-evidence: servers[] host solr.idl.ucsf.edu is under the ucsf.edu registrable domain; idl.ucsf.edu redirects to www.industrydocuments.ucsf.edu; the CNAME target libckm.org is the UCSF Library Center for Knowledge Management's own infrastructure domain (github.com/ucsf-ckm, "UCSF Center for Knowledge Management", 74 repositories). No other institution in the 248-university cohort claims this host.
+  x-provenance:
+    generated: '2026-08-19'
+    method: derived
+    source:
+    - https://www.industrydocuments.ucsf.edu/wp-content/uploads/2022/02/IndustryDocumentsDataAPI_v5.pdf
+    - https://web.archive.org/web/20230130203403/https://industrydocuments.ucsf.edu/research-tools/api/
+    - https://solr.idl.ucsf.edu/solr/ltdl3/query?q=id:kylw0221&wt=json
+servers:
+- url: https://solr.idl.ucsf.edu/solr/ltdl3
+  description: UCSF Industry Documents Library production Solr collection (ltdl3)
+tags:
+- name: Documents
+  description: Query the IDL document corpus by identifier or by Solr query syntax.
+paths:
+  /query:
+    get:
+      tags:
+      - Documents
+      operationId: queryDocuments
+      summary: Query the Industry Documents Library corpus
+      description: Executes a Solr query against the IDL corpus. Retrieve a single document with `q=id:<8-character-id>`, or run a field query using Solr syntax with AND / OR / NOT and explicit parentheses. Results are paged 100 records at a time via `start`. Ampersands inside field values must be percent-encoded as %26.
+      parameters:
+      - name: q
+        in: query
+        required: true
+        description: Solr query. Examples — `id:kylw0221`; `author:glantz`; `(author:glantz AND industry:tobacco)`; `((collection:"brown %26 williamson" AND type:letter) NOT brand:kool)`; `documentdateiso:[2001-01-01T00:00:00Z TO 2011-12-31T00:00:00Z]`.
+        schema:
+          type: string
+        example: id:kylw0221
+      - name: wt
+        in: query
+        required: false
+        description: Writer type — the response serialization format.
+        schema:
+          type: string
+          default: xml
+          enum:
+          - xml
+          - json
+          - python
+          - ruby
+          - php
+          - csv
+      - name: start
+        in: query
+        required: false
+        description: Zero-based offset into the result set. Honoured. The deployed page size is 1000 documents (UCSF's documentation says 100).
+        schema:
+          type: integer
+          minimum: 0
+          default: 0
+      - name: rows
+        in: query
+        required: false
+        description: Accepted and echoed back in responseHeader.params, but NOT HONOURED by the deployed /query request handler as of 2026-08-19 — rows=0, rows=1, rows=5 and rows=100 all return the same 1000-document page. UCSF's own published documentation states that "we only return 100 records at a time" and instructs callers to page with start=100; the deployed page size is 1000. Page with `start` and read the actual length of response.docs rather than assuming a page size.
+        schema:
+          type: integer
+          minimum: 0
+        x-deployed-behavior: ignored
+        x-verified: '2026-08-19'
+      - name: fl
+        in: query
+        required: false
+        description: Comma-separated list of fields to return.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Solr response envelope containing matched documents.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SolrResponse'
+            application/xml:
+              schema:
+                type: string
+            text/csv:
+              schema:
+                type: string
+        '400':
+          description: Malformed Solr query.
+        '403':
+          description: Request rejected — collection not exposed, or edge protection engaged.
+        '404':
+          description: Unknown Solr collection.
+components:
+  schemas:
+    SolrResponse:
+      type: object
+      properties:
+        responseHeader:
+          type: object
+          properties:
+            status:
+              type: integer
+            QTime:
+              type: integer
+            params:
+              type: object
+              additionalProperties: true
+        response:
+          type: object
+          properties:
+            numFound:
+              type: integer
+              description: Total records matching the query.
+            start:
+              type: integer
+            numFoundExact:
+              type: boolean
+            docs:
+              type: array
+              items:
+                $ref: '#/components/schemas/IndustryDocument'
+    IndustryDocument:
+      type: object
+      description: One archived industry document record as indexed in the ltdl3 collection.
+      properties:
+        id:
+          type: string
+          description: 'Eight-character document identifier: four letters then four digits. Case-insensitive.'
+          example: kylw0221
+        tid:
+          type: string
+          description: Legacy transfer identifier.
+        collection:
+          type: array
+          items:
+            type: string
+        collectioncode:
+          type: array
+          items:
+            type: string
+        industry:
+          type: array
+          items:
+            type: string
+          description: tobacco | drug | chemical | food | fossilfuel | opioids
+        availability:
+          type: array
+          items:
+            type: string
+          description: e.g. public, no restrictions
+        case:
+          type: array
+          items:
+            type: string
+          description: Litigation case the document was produced in.
+        title:
+          type: string
+        author:
+          type: array
+          items:
+            type: string
+        mentioned:
+          type: array
+          items:
+            type: string
+        witness:
+          type: string
+        type:
+          type: array
+          items:
+            type: string
+        brand:
+          type: array
+          items:
+            type: string
+        box:
+          type: string
+        pages:
+          type: integer
+        bates:
+          type: string
+        batesexpanded:
+          type: string
+          description: Expanded bates range — query bates numbers against this field.
+        description:
+          type: string
+        documentdate:
+          type: string
+          description: String date in "YYYY Month DD" form, e.g. "2014 November 25".
+        documentdateiso:
+          type: string
+          format: date-time
+          description: ISO form of documentdate — use this field for range queries.
+        dateaddeducsf:
+          type: string
+        dateaddedindustry:
+          type: string
+        datemodifiedindustry:
+          type: string
+        dateshipped:
+          type: string
+        minnesotarequestnumber:
+          type: string
+        cited:
+          type: array
+          items:
+            type: string

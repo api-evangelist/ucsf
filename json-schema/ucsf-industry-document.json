@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ucsf/main/json-schema/ucsf-industry-document.json",
+  "title": "UCSF Industry Documents Library Document",
+  "x-provenance": {
+    "generated": "2026-08-19",
+    "method": "derived",
+    "source": [
+      "https://www.industrydocuments.ucsf.edu/wp-content/uploads/2022/02/IndustryDocumentsDataAPI_v5.pdf",
+      "https://solr.idl.ucsf.edu/solr/ltdl3/query?q=id:kylw0221&wt=json"
+    ],
+    "x-operator": "institution",
+    "note": "Derived by API Evangelist from UCSF's Industry Documents Data API v5 documentation and live probed responses. UCSF publishes no JSON Schema."
+  },
+  "type": "object",
+  "required": [
+    "id"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z]{4}\\d{4}$",
+      "description": "Eight-character document identifier, case-insensitive.",
+      "examples": [
+        "kylw0221"
+      ]
+    },
+    "tid": {
+      "type": "string",
+      "description": "Legacy transfer identifier."
+    },
+    "collection": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "collectioncode": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "industry": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "tobacco",
+          "drug",
+          "chemical",
+          "food",
+          "fossilfuel",
+          "opioids"
+        ]
+      }
+    },
+    "availability": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "case": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mentioned": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "witness": {
+      "type": "string"
+    },
+    "type": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "brand": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "box": {
+      "type": "string"
+    },
+    "pages": {
+      "type": "integer"
+    },
+    "bates": {
+      "type": "string"
+    },
+    "batesexpanded": {
+      "type": "string",
+      "description": "Expanded bates range \u2014 query bates numbers against this field, not `bates`."
+    },
+    "description": {
+      "type": "string"
+    },
+    "documentdate": {
+      "type": "string",
+      "description": "String date, 'YYYY Month DD'. Not range-queryable."
+    },
+    "documentdateiso": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO form \u2014 use for range queries."
+    },
+    "dateaddeducsf": {
+      "type": "string"
+    },
+    "dateaddedindustry": {
+      "type": "string"
+    },
+    "datemodifiedindustry": {
+      "type": "string"
+    },
+    "dateshipped": {
+      "type": "string"
+    },
+    "minnesotarequestnumber": {
+      "type": "string"
+    },
+    "cited": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Query as `cited:*` / `NOT cited:*` against Solr; `cited:yes` only works on the website."
+    }
+  }
+}

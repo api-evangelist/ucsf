@@ -1,0 +1,245 @@
+openapi: 3.2.0
+info:
+  title: UCSF JSON Profiles API
+  version: '2'
+  description: Public JSON API over UCSF Profiles, the research-networking platform operated by the UCSF Clinical and Translational Science Institute (CTSI). Returns the public record for a UCSF researcher, faculty member or postdoc — name, school, department, titles, ORCID iD, education and training, narrative, keywords, publications, clinical trials, and research activities and funding. GET requests return JSON with CORS support; JSONP is supported for legacy callers. This OpenAPI description is DERIVED by API Evangelist from UCSF's own developer documentation plus live probed responses; UCSF does not publish an OpenAPI document.
+  contact:
+    name: UCSF Profiles / UCSF CTSI
+    url: https://profilesdeveloper.ucsf.edu/
+  x-operator: institution
+  x-operator-evidence: servers[] host api.profiles.ucsf.edu is under the ucsf.edu registrable domain; the platform instance, its data and its developer documentation are operated by UCSF CTSI. The underlying Profiles RNS software is open source, but the running service is UCSF's.
+  x-provenance:
+    generated: '2026-08-19'
+    method: derived
+    source:
+    - https://profilesdeveloper.ucsf.edu/json-api
+    - https://api.profiles.ucsf.edu/json/v2/?source=apievangelist.com&ProfilesURLName=kirsten.bibbins-domingo
+servers:
+- url: https://api.profiles.ucsf.edu/json/v2
+  description: UCSF Profiles JSON API v2
+tags:
+- name: Profiles
+  description: Look up a UCSF person's public research profile.
+paths:
+  /:
+    get:
+      tags:
+      - Profiles
+      operationId: getProfile
+      summary: Retrieve a UCSF Profiles record
+      description: Returns the public UCSF Profiles record for one person. Exactly one identifier parameter must be supplied. `source` is required and must identify the calling application or host. Callers requesting many profiles are asked to wait at least one second between calls and to refresh any cached copy at least weekly.
+      parameters:
+      - name: source
+        in: query
+        required: true
+        description: Identifies the calling application or host, e.g. `example.ucsf.edu` or `UCSF+Mobile+App+for+iOS`. Required on every request.
+        schema:
+          type: string
+      - name: ProfilesURLName
+        in: query
+        description: Profiles URL slug — for profiles.ucsf.edu/alexandra.brown use `alexandra.brown`.
+        schema:
+          type: string
+      - name: EPPN
+        in: query
+        description: eduPerson Principal Name for the person.
+        schema:
+          type: string
+      - name: URL
+        in: query
+        description: A full profiles.ucsf.edu URL, including a variety of legacy URL forms.
+        schema:
+          type: string
+          format: uri
+      - name: EmployeeID
+        in: query
+        description: Nine-digit UCSF employee ID. Supported but strongly discouraged by UCSF — prefer EPPN.
+        schema:
+          type: string
+        deprecated: true
+      - name: ProfilesNodeID
+        in: query
+        description: Internal Profiles node ID used after Feb 2013. Deprecated; 2013–2018 IDs are mapped on a best-effort basis.
+        schema:
+          type: string
+        deprecated: true
+      - name: Person
+        in: query
+        description: Legacy Profiles Person ID used in URLs before Feb 2013. Deprecated.
+        schema:
+          type: string
+        deprecated: true
+      - name: FNO
+        in: query
+        description: Legacy FNO code. Deprecated — only FNOs issued before April 2018 are supported.
+        schema:
+          type: string
+        deprecated: true
+      - name: publications
+        in: query
+        description: Set to `full` to return complete publication records rather than a summary.
+        schema:
+          type: string
+          enum:
+          - full
+      - name: callback
+        in: query
+        description: JSONP callback function name. When present the response is served as text/javascript.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The person's public profile.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfilesResponse'
+            text/javascript:
+              schema:
+                type: string
+                description: JSONP wrapper around the JSON body.
+        '400':
+          description: Invalid request — no identifier type supplied, or an unrecognised parameter.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: No matching person.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Human-readable error message.
+      example:
+        error: 'You didn''t specify an identifier type to look up! We were expecting to see one of the following: ?EPPN=... / ?EmployeeID=... / ?FNO=... / ?Person=... / ?ProfilesNodeID=... / ?ProfilesURLName=... / ?URL=...'
+    ProfilesResponse:
+      type: object
+      properties:
+        Profiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Profile'
+        api_notes:
+          type: string
+    Profile:
+      type: object
+      properties:
+        Name:
+          type: string
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        Title:
+          type: string
+        Titles:
+          type: array
+          items:
+            type: string
+        School:
+          type: string
+        Department:
+          type: string
+        Address:
+          type: object
+          additionalProperties: true
+        Email:
+          type: string
+        PhotoURL:
+          type: string
+          format: uri
+        ProfilesURL:
+          type: string
+          format: uri
+        ORCID:
+          type: string
+          pattern: ^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$
+          description: ORCID iD for the researcher.
+          example: 0000-0002-8962-0622
+        Narrative:
+          type: string
+        Keywords:
+          type: array
+          items:
+            type: string
+        FreetextKeywords:
+          type: array
+          items:
+            type: string
+        Education_Training:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        PublicationCount:
+          type: integer
+        Publications:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        ClinicalTrials:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        ResearchActivitiesAndFunding:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        AwardOrHonors:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        CollaborationInterests:
+          type: string
+        FacultyMentoring:
+          type: string
+        GlobalHealth:
+          type: object
+          additionalProperties: true
+        GlobalHealth_beta:
+          type: object
+          additionalProperties: true
+        NIHGrants_beta:
+          type: array
+          description: Deprecated by UCSF in favour of ResearchActivitiesAndFunding; fiscal year may be inaccurate.
+          deprecated: true
+          items:
+            type: object
+            additionalProperties: true
+        MediaLinks_beta:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        SlideShare_beta:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        Twitter_beta:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        Videos:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        WebLinks_beta:
+          type: array
+          items:
+            type: object
+            additionalProperties: true

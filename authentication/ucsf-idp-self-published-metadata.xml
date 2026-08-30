@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntitiesDescriptor
+    Name="https://ucsf-federation.edu/metadata/myaccess-ucsf.xml"
+    xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
+    xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    xmlns:shibmd="urn:mace:shibboleth:metadata:1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+
+<!-- InCommon Federation entityID -->
+<EntityDescriptor
+    entityID="urn:mace:incommon:ucsf.edu"
+    xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
+    xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    xmlns:shibmd="urn:mace:shibboleth:metadata:1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+
+    <IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol" errorURL="https://dp.ucsf.edu/idp/error.html" >
+
+        <Extensions>
+            <shibmd:Scope regexp="false">ucsf.edu</shibmd:Scope>
+
+            <mdui:UIInfo>
+                <mdui:DisplayName xml:lang="en">UCSF MyAccess Login</mdui:DisplayName>
+                <mdui:Description xml:lang="en">MyAccess single-sign-on environment for UC, San Francisco</mdui:Description>
+                <mdui:Logo height="107" width="130">https://identity.ucsf.edu/sites/g/files/tkssra266/f/wysiwyg/logo_0.jpg</mdui:Logo>
+                <mdui:InformationURL xml:lang="en">http://www.ucsf.edu</mdui:InformationURL>
+                <mdui:PrivacyStatementURL xml:lang="en">http://it.ucsf.edu/sites/it.ucsf.edu/files/ucsf_campus_security_and_privacy_attestation_statement.pdf</mdui:PrivacyStatementURL>
+            </mdui:UIInfo>
+
+        </Extensions>
+
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDFzCCAf+gAwIBAgIUW2hLRYSTq6yflHpRZ5ZBXty14rYwDQYJKoZIhvcNAQEFBQAwFjEUMBIG
+A1UEAxMLZHAudWNzZi5lZHUwHhcNMDkwODI5MDQwMzU5WhcNMjkwODI5MDQwMzU5WjAWMRQwEgYD
+VQQDEwtkcC51Y3NmLmVkdTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK+WY9j/fuME
+Q2u4mKKeU5LXO+mi7BKKkJP3PUN0Iz4whL/M9uTR+C7x6DCVbi4CXNia8hmoNbWIKCKto9UJT/e+
+Y4y+dZjC4TLcIvdUog7x4/3qlcwI76jkomyL5uy2/7Ow+l/pmX99wph+K4/d8EpwE3NTXcFOVv1D
+8M3pUrVEfT1aoAm7p4SXS3uohM7KDXTljqtxImt/Q+cRFBImNyp7YTFp37024eMwtNfLJxEajodI
+FOCCYP6DmN5I1RWTF808BPPbkt7agjuz50pCdXHxfgnCfUmHeeUz4yLI6cgOWkB9JISN567vAH68
+IInM9with782aIsVLf2Fs5pQqxECAwEAAaNdMFswOgYDVR0RBDMwMYILZHAudWNzZi5lZHWGImh0
+dHBzOi8vZHAudWNzZi5lZHUvaWRwL3NoaWJib2xldGgwHQYDVR0OBBYEFDfsmZZFJeq4xHogyRDy
++1N69EEKMA0GCSqGSIb3DQEBBQUAA4IBAQBiK5W3RyQc/LL+FOy9mQIFzmobtJCGYUHwn/jMzZ+F
+diV688MOA94AHGnxlvjjlVE7sjI83XgUK80IpLWz1QtCN9Pcwo5M0tNCxOFAkIe1xRadZmN4LpFO
+enH8vd5TF7DjrozFivFC4+l/mTTW4hfl+RaR34zgrzBAv+fUNrq7cNrid11w0h17HNqD964TR4Qp
+hmFyIrFR9skSs+41ScRMa4c7Svel8p4f+ptoATHSlSm0OZayjktgJp4o+Ld8xiH8Q5oLQ/qNG0hx
+9IRMaum9h0HCnxwHKsrxcJW2/A/CVhaVlj4Jp/B3Zs13i2Wc6VGZGK1rfVetLqSnvfVPnT+h
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <KeyDescriptor use="encryption">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDFzCCAf+gAwIBAgIUW2hLRYSTq6yflHpRZ5ZBXty14rYwDQYJKoZIhvcNAQEFBQAwFjEUMBIG
+A1UEAxMLZHAudWNzZi5lZHUwHhcNMDkwODI5MDQwMzU5WhcNMjkwODI5MDQwMzU5WjAWMRQwEgYD
+VQQDEwtkcC51Y3NmLmVkdTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK+WY9j/fuME
+Q2u4mKKeU5LXO+mi7BKKkJP3PUN0Iz4whL/M9uTR+C7x6DCVbi4CXNia8hmoNbWIKCKto9UJT/e+
+Y4y+dZjC4TLcIvdUog7x4/3qlcwI76jkomyL5uy2/7Ow+l/pmX99wph+K4/d8EpwE3NTXcFOVv1D
+8M3pUrVEfT1aoAm7p4SXS3uohM7KDXTljqtxImt/Q+cRFBImNyp7YTFp37024eMwtNfLJxEajodI
+FOCCYP6DmN5I1RWTF808BPPbkt7agjuz50pCdXHxfgnCfUmHeeUz4yLI6cgOWkB9JISN567vAH68
+IInM9with782aIsVLf2Fs5pQqxECAwEAAaNdMFswOgYDVR0RBDMwMYILZHAudWNzZi5lZHWGImh0
+dHBzOi8vZHAudWNzZi5lZHUvaWRwL3NoaWJib2xldGgwHQYDVR0OBBYEFDfsmZZFJeq4xHogyRDy
++1N69EEKMA0GCSqGSIb3DQEBBQUAA4IBAQBiK5W3RyQc/LL+FOy9mQIFzmobtJCGYUHwn/jMzZ+F
+diV688MOA94AHGnxlvjjlVE7sjI83XgUK80IpLWz1QtCN9Pcwo5M0tNCxOFAkIe1xRadZmN4LpFO
+enH8vd5TF7DjrozFivFC4+l/mTTW4hfl+RaR34zgrzBAv+fUNrq7cNrid11w0h17HNqD964TR4Qp
+hmFyIrFR9skSs+41ScRMa4c7Svel8p4f+ptoATHSlSm0OZayjktgJp4o+Ld8xiH8Q5oLQ/qNG0hx
+9IRMaum9h0HCnxwHKsrxcJW2/A/CVhaVlj4Jp/B3Zs13i2Wc6VGZGK1rfVetLqSnvfVPnT+h
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+                                   Location="https://dp.ucsf.edu/idp/profile/SAML2/SOAP/ArtifactResolution"
+                                   index="1"/>
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding"
+                                   Location="https://dp.ucsf.edu/idp/profile/SAML1/SOAP/ArtifactResolution"
+                                   index="2"/>
+
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+                             Location="https://dp.ucsf.edu/idp/profile/SAML2/Redirect/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                             Location="https://dp.ucsf.edu/idp/profile/SAML2/POST/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign"
+                             Location="https://dp.ucsf.edu/idp/profile/SAML2/POST-SimpleSign/SLO"/>
+
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                             Location="https://dp.ucsf.edu/idp/profile/SAML2/POST/SSO" />
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" 
+                             Location="https://dp.ucsf.edu/idp/profile/SAML2/POST-SimpleSign/SSO" />
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" 
+                             Location="https://dp.ucsf.edu/idp/profile/SAML2/Redirect/SSO" />
+        <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest"
+                             Location="https://dp.ucsf.edu/idp/profile/Shibboleth/SSO" />
+
+    </IDPSSODescriptor>
+
+    <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <Extensions>
+            <shibmd:Scope regexp="false">ucsf.edu</shibmd:Scope>
+        </Extensions>
+
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDFzCCAf+gAwIBAgIUW2hLRYSTq6yflHpRZ5ZBXty14rYwDQYJKoZIhvcNAQEFBQAwFjEUMBIG
+A1UEAxMLZHAudWNzZi5lZHUwHhcNMDkwODI5MDQwMzU5WhcNMjkwODI5MDQwMzU5WjAWMRQwEgYD
+VQQDEwtkcC51Y3NmLmVkdTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK+WY9j/fuME
+Q2u4mKKeU5LXO+mi7BKKkJP3PUN0Iz4whL/M9uTR+C7x6DCVbi4CXNia8hmoNbWIKCKto9UJT/e+
+Y4y+dZjC4TLcIvdUog7x4/3qlcwI76jkomyL5uy2/7Ow+l/pmX99wph+K4/d8EpwE3NTXcFOVv1D
+8M3pUrVEfT1aoAm7p4SXS3uohM7KDXTljqtxImt/Q+cRFBImNyp7YTFp37024eMwtNfLJxEajodI
+FOCCYP6DmN5I1RWTF808BPPbkt7agjuz50pCdXHxfgnCfUmHeeUz4yLI6cgOWkB9JISN567vAH68
+IInM9with782aIsVLf2Fs5pQqxECAwEAAaNdMFswOgYDVR0RBDMwMYILZHAudWNzZi5lZHWGImh0
+dHBzOi8vZHAudWNzZi5lZHUvaWRwL3NoaWJib2xldGgwHQYDVR0OBBYEFDfsmZZFJeq4xHogyRDy
++1N69EEKMA0GCSqGSIb3DQEBBQUAA4IBAQBiK5W3RyQc/LL+FOy9mQIFzmobtJCGYUHwn/jMzZ+F
+diV688MOA94AHGnxlvjjlVE7sjI83XgUK80IpLWz1QtCN9Pcwo5M0tNCxOFAkIe1xRadZmN4LpFO
+enH8vd5TF7DjrozFivFC4+l/mTTW4hfl+RaR34zgrzBAv+fUNrq7cNrid11w0h17HNqD964TR4Qp
+hmFyIrFR9skSs+41ScRMa4c7Svel8p4f+ptoATHSlSm0OZayjktgJp4o+Ld8xiH8Q5oLQ/qNG0hx
+9IRMaum9h0HCnxwHKsrxcJW2/A/CVhaVlj4Jp/B3Zs13i2Wc6VGZGK1rfVetLqSnvfVPnT+h
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <KeyDescriptor use="encryption">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDFzCCAf+gAwIBAgIUW2hLRYSTq6yflHpRZ5ZBXty14rYwDQYJKoZIhvcNAQEFBQAwFjEUMBIG
+A1UEAxMLZHAudWNzZi5lZHUwHhcNMDkwODI5MDQwMzU5WhcNMjkwODI5MDQwMzU5WjAWMRQwEgYD
+VQQDEwtkcC51Y3NmLmVkdTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK+WY9j/fuME
+Q2u4mKKeU5LXO+mi7BKKkJP3PUN0Iz4whL/M9uTR+C7x6DCVbi4CXNia8hmoNbWIKCKto9UJT/e+
+Y4y+dZjC4TLcIvdUog7x4/3qlcwI76jkomyL5uy2/7Ow+l/pmX99wph+K4/d8EpwE3NTXcFOVv1D
+8M3pUrVEfT1aoAm7p4SXS3uohM7KDXTljqtxImt/Q+cRFBImNyp7YTFp37024eMwtNfLJxEajodI
+FOCCYP6DmN5I1RWTF808BPPbkt7agjuz50pCdXHxfgnCfUmHeeUz4yLI6cgOWkB9JISN567vAH68
+IInM9with782aIsVLf2Fs5pQqxECAwEAAaNdMFswOgYDVR0RBDMwMYILZHAudWNzZi5lZHWGImh0
+dHBzOi8vZHAudWNzZi5lZHUvaWRwL3NoaWJib2xldGgwHQYDVR0OBBYEFDfsmZZFJeq4xHogyRDy
++1N69EEKMA0GCSqGSIb3DQEBBQUAA4IBAQBiK5W3RyQc/LL+FOy9mQIFzmobtJCGYUHwn/jMzZ+F
+diV688MOA94AHGnxlvjjlVE7sjI83XgUK80IpLWz1QtCN9Pcwo5M0tNCxOFAkIe1xRadZmN4LpFO
+enH8vd5TF7DjrozFivFC4+l/mTTW4hfl+RaR34zgrzBAv+fUNrq7cNrid11w0h17HNqD964TR4Qp
+hmFyIrFR9skSs+41ScRMa4c7Svel8p4f+ptoATHSlSm0OZayjktgJp4o+Ld8xiH8Q5oLQ/qNG0hx
+9IRMaum9h0HCnxwHKsrxcJW2/A/CVhaVlj4Jp/B3Zs13i2Wc6VGZGK1rfVetLqSnvfVPnT+h
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+                          Location="https://dp.ucsf.edu/idp/profile/SAML2/SOAP/AttributeQuery" />
+        <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding"
+                          Location="https://dp.ucsf.edu/idp/profile/SAML1/SOAP/AttributeQuery" />
+
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+
+    </AttributeAuthorityDescriptor>
+
+    <SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>MIIDFzCCAf+gAwIBAgIUW2hLRYSTq6yflHpRZ5ZBXty14rYwDQYJKoZIhvcNAQEF
+BQAwFjEUMBIGA1UEAxMLZHAudWNzZi5lZHUwHhcNMDkwODI5MDQwMzU5WhcNMjkw
+ODI5MDQwMzU5WjAWMRQwEgYDVQQDEwtkcC51Y3NmLmVkdTCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBAK+WY9j/fuMEQ2u4mKKeU5LXO+mi7BKKkJP3PUN0
+Iz4whL/M9uTR+C7x6DCVbi4CXNia8hmoNbWIKCKto9UJT/e+Y4y+dZjC4TLcIvdU
+og7x4/3qlcwI76jkomyL5uy2/7Ow+l/pmX99wph+K4/d8EpwE3NTXcFOVv1D8M3p
+UrVEfT1aoAm7p4SXS3uohM7KDXTljqtxImt/Q+cRFBImNyp7YTFp37024eMwtNfL
+JxEajodIFOCCYP6DmN5I1RWTF808BPPbkt7agjuz50pCdXHxfgnCfUmHeeUz4yLI
+6cgOWkB9JISN567vAH68IInM9with782aIsVLf2Fs5pQqxECAwEAAaNdMFswOgYD
+VR0RBDMwMYILZHAudWNzZi5lZHWGImh0dHBzOi8vZHAudWNzZi5lZHUvaWRwL3No
+aWJib2xldGgwHQYDVR0OBBYEFDfsmZZFJeq4xHogyRDy+1N69EEKMA0GCSqGSIb3
+DQEBBQUAA4IBAQBiK5W3RyQc/LL+FOy9mQIFzmobtJCGYUHwn/jMzZ+FdiV688MO
+A94AHGnxlvjjlVE7sjI83XgUK80IpLWz1QtCN9Pcwo5M0tNCxOFAkIe1xRadZmN4
+LpFOenH8vd5TF7DjrozFivFC4+l/mTTW4hfl+RaR34zgrzBAv+fUNrq7cNrid11w
+0h17HNqD964TR4QphmFyIrFR9skSs+41ScRMa4c7Svel8p4f+ptoATHSlSm0OZay
+jktgJp4o+Ld8xiH8Q5oLQ/qNG0hx9IRMaum9h0HCnxwHKsrxcJW2/A/CVhaVlj4J
+p/B3Zs13i2Wc6VGZGK1rfVetLqSnvfVPnT+h</ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <KeyDescriptor use="encryption">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>MIIDFzCCAf+gAwIBAgIUW2hLRYSTq6yflHpRZ5ZBXty14rYwDQYJKoZIhvcNAQEF
+BQAwFjEUMBIGA1UEAxMLZHAudWNzZi5lZHUwHhcNMDkwODI5MDQwMzU5WhcNMjkw
+ODI5MDQwMzU5WjAWMRQwEgYDVQQDEwtkcC51Y3NmLmVkdTCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBAK+WY9j/fuMEQ2u4mKKeU5LXO+mi7BKKkJP3PUN0
+Iz4whL/M9uTR+C7x6DCVbi4CXNia8hmoNbWIKCKto9UJT/e+Y4y+dZjC4TLcIvdU
+og7x4/3qlcwI76jkomyL5uy2/7Ow+l/pmX99wph+K4/d8EpwE3NTXcFOVv1D8M3p
+UrVEfT1aoAm7p4SXS3uohM7KDXTljqtxImt/Q+cRFBImNyp7YTFp37024eMwtNfL
+JxEajodIFOCCYP6DmN5I1RWTF808BPPbkt7agjuz50pCdXHxfgnCfUmHeeUz4yLI
+6cgOWkB9JISN567vAH68IInM9with782aIsVLf2Fs5pQqxECAwEAAaNdMFswOgYD
+VR0RBDMwMYILZHAudWNzZi5lZHWGImh0dHBzOi8vZHAudWNzZi5lZHUvaWRwL3No
+aWJib2xldGgwHQYDVR0OBBYEFDfsmZZFJeq4xHogyRDy+1N69EEKMA0GCSqGSIb3
+DQEBBQUAA4IBAQBiK5W3RyQc/LL+FOy9mQIFzmobtJCGYUHwn/jMzZ+FdiV688MO
+A94AHGnxlvjjlVE7sjI83XgUK80IpLWz1QtCN9Pcwo5M0tNCxOFAkIe1xRadZmN4
+LpFOenH8vd5TF7DjrozFivFC4+l/mTTW4hfl+RaR34zgrzBAv+fUNrq7cNrid11w
+0h17HNqD964TR4QphmFyIrFR9skSs+41ScRMa4c7Svel8p4f+ptoATHSlSm0OZay
+jktgJp4o+Ld8xiH8Q5oLQ/qNG0hx9IRMaum9h0HCnxwHKsrxcJW2/A/CVhaVlj4J
+p/B3Zs13i2Wc6VGZGK1rfVetLqSnvfVPnT+h</ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://dp.ucsf.edu/idp/profile/Authn/SAML2/POST/SSO" index="0" />
+
+    </SPSSODescriptor>
+
+</EntityDescriptor>
+
+<!-- Non-InCommon Federation entityID -->
+<EntityDescriptor
+    entityID="https://dp.ucsf.edu/idp/shibboleth"
+    xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
+    xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    xmlns:shibmd="urn:mace:shibboleth:metadata:1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+
+    <IDPSSODescriptor protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol" errorURL="https://dp.ucsf.edu/idp/error.html" >
+
+        <Extensions>
+            <shibmd:Scope regexp="false">ucsf.edu</shibmd:Scope>
+
+            <mdui:UIInfo>
+                <mdui:DisplayName xml:lang="en">UCSF MyAccess Login</mdui:DisplayName>
+                <mdui:Description xml:lang="en">MyAccess single-sign-on environment for UC, San Francisco</mdui:Description>
+                <mdui:Logo height="38" width="80">https://www.ucsf.edu/sites/all/themes/ucsf_base/logo.png</mdui:Logo>
+                <mdui:InformationURL xml:lang="en">http://www.ucsf.edu</mdui:InformationURL>
+                <mdui:PrivacyStatementURL xml:lang="en">http://it.ucsf.edu/sites/it.ucsf.edu/files/ucsf_campus_security_and_privacy_attestation_statement.pdf</mdui:PrivacyStatementURL>
+            </mdui:UIInfo>
+
+        </Extensions>
+
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDFzCCAf+gAwIBAgIUW2hLRYSTq6yflHpRZ5ZBXty14rYwDQYJKoZIhvcNAQEFBQAwFjEUMBIG
+A1UEAxMLZHAudWNzZi5lZHUwHhcNMDkwODI5MDQwMzU5WhcNMjkwODI5MDQwMzU5WjAWMRQwEgYD
+VQQDEwtkcC51Y3NmLmVkdTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK+WY9j/fuME
+Q2u4mKKeU5LXO+mi7BKKkJP3PUN0Iz4whL/M9uTR+C7x6DCVbi4CXNia8hmoNbWIKCKto9UJT/e+
+Y4y+dZjC4TLcIvdUog7x4/3qlcwI76jkomyL5uy2/7Ow+l/pmX99wph+K4/d8EpwE3NTXcFOVv1D
+8M3pUrVEfT1aoAm7p4SXS3uohM7KDXTljqtxImt/Q+cRFBImNyp7YTFp37024eMwtNfLJxEajodI
+FOCCYP6DmN5I1RWTF808BPPbkt7agjuz50pCdXHxfgnCfUmHeeUz4yLI6cgOWkB9JISN567vAH68
+IInM9with782aIsVLf2Fs5pQqxECAwEAAaNdMFswOgYDVR0RBDMwMYILZHAudWNzZi5lZHWGImh0
+dHBzOi8vZHAudWNzZi5lZHUvaWRwL3NoaWJib2xldGgwHQYDVR0OBBYEFDfsmZZFJeq4xHogyRDy
++1N69EEKMA0GCSqGSIb3DQEBBQUAA4IBAQBiK5W3RyQc/LL+FOy9mQIFzmobtJCGYUHwn/jMzZ+F
+diV688MOA94AHGnxlvjjlVE7sjI83XgUK80IpLWz1QtCN9Pcwo5M0tNCxOFAkIe1xRadZmN4LpFO
+enH8vd5TF7DjrozFivFC4+l/mTTW4hfl+RaR34zgrzBAv+fUNrq7cNrid11w0h17HNqD964TR4Qp
+hmFyIrFR9skSs+41ScRMa4c7Svel8p4f+ptoATHSlSm0OZayjktgJp4o+Ld8xiH8Q5oLQ/qNG0hx
+9IRMaum9h0HCnxwHKsrxcJW2/A/CVhaVlj4Jp/B3Zs13i2Wc6VGZGK1rfVetLqSnvfVPnT+h
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <KeyDescriptor use="encryption">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>
+MIIDFzCCAf+gAwIBAgIUW2hLRYSTq6yflHpRZ5ZBXty14rYwDQYJKoZIhvcNAQEFBQAwFjEUMBIG
+A1UEAxMLZHAudWNzZi5lZHUwHhcNMDkwODI5MDQwMzU5WhcNMjkwODI5MDQwMzU5WjAWMRQwEgYD
+VQQDEwtkcC51Y3NmLmVkdTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK+WY9j/fuME
+Q2u4mKKeU5LXO+mi7BKKkJP3PUN0Iz4whL/M9uTR+C7x6DCVbi4CXNia8hmoNbWIKCKto9UJT/e+
+Y4y+dZjC4TLcIvdUog7x4/3qlcwI76jkomyL5uy2/7Ow+l/pmX99wph+K4/d8EpwE3NTXcFOVv1D
+8M3pUrVEfT1aoAm7p4SXS3uohM7KDXTljqtxImt/Q+cRFBImNyp7YTFp37024eMwtNfLJxEajodI
+FOCCYP6DmN5I1RWTF808BPPbkt7agjuz50pCdXHxfgnCfUmHeeUz4yLI6cgOWkB9JISN567vAH68
+IInM9with782aIsVLf2Fs5pQqxECAwEAAaNdMFswOgYDVR0RBDMwMYILZHAudWNzZi5lZHWGImh0
+dHBzOi8vZHAudWNzZi5lZHUvaWRwL3NoaWJib2xldGgwHQYDVR0OBBYEFDfsmZZFJeq4xHogyRDy
++1N69EEKMA0GCSqGSIb3DQEBBQUAA4IBAQBiK5W3RyQc/LL+FOy9mQIFzmobtJCGYUHwn/jMzZ+F
+diV688MOA94AHGnxlvjjlVE7sjI83XgUK80IpLWz1QtCN9Pcwo5M0tNCxOFAkIe1xRadZmN4LpFO
+enH8vd5TF7DjrozFivFC4+l/mTTW4hfl+RaR34zgrzBAv+fUNrq7cNrid11w0h17HNqD964TR4Qp
+hmFyIrFR9skSs+41ScRMa4c7Svel8p4f+ptoATHSlSm0OZayjktgJp4o+Ld8xiH8Q5oLQ/qNG0hx
+9IRMaum9h0HCnxwHKsrxcJW2/A/CVhaVlj4Jp/B3Zs13i2Wc6VGZGK1rfVetLqSnvfVPnT+h
+                    </ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+                                   Location="https://dp.ucsf.edu/idp/profile/SAML2/SOAP/ArtifactResolution"
+                                   index="1"/>
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding"
+                                   Location="https://dp.ucsf.edu/idp/profile/SAML1/SOAP/ArtifactResolution"
+                                   index="2"/>
+
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+                             Location="https://dp.ucsf.edu/idp/profile/SAML2/Redirect/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                             Location="https://dp.ucsf.edu/idp/profile/SAML2/POST/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign"
+                             Location="https://dp.ucsf.edu/idp/profile/SAML2/POST-SimpleSign/SLO"/>
+
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+        <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
+
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+                             Location="https://dp.ucsf.edu/idp/profile/SAML2/POST/SSO" />
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" 
+                             Location="https://dp.ucsf.edu/idp/profile/SAML2/POST-SimpleSign/SSO" />
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" 
+                             Location="https://dp.ucsf.edu/idp/profile/SAML2/Redirect/SSO" />
+        <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest"
+                             Location="https://dp.ucsf.edu/idp/profile/Shibboleth/SSO" />
+
+    </IDPSSODescriptor>
+
+    <SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>MIIDFzCCAf+gAwIBAgIUW2hLRYSTq6yflHpRZ5ZBXty14rYwDQYJKoZIhvcNAQEF
+BQAwFjEUMBIGA1UEAxMLZHAudWNzZi5lZHUwHhcNMDkwODI5MDQwMzU5WhcNMjkw
+ODI5MDQwMzU5WjAWMRQwEgYDVQQDEwtkcC51Y3NmLmVkdTCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBAK+WY9j/fuMEQ2u4mKKeU5LXO+mi7BKKkJP3PUN0
+Iz4whL/M9uTR+C7x6DCVbi4CXNia8hmoNbWIKCKto9UJT/e+Y4y+dZjC4TLcIvdU
+og7x4/3qlcwI76jkomyL5uy2/7Ow+l/pmX99wph+K4/d8EpwE3NTXcFOVv1D8M3p
+UrVEfT1aoAm7p4SXS3uohM7KDXTljqtxImt/Q+cRFBImNyp7YTFp37024eMwtNfL
+JxEajodIFOCCYP6DmN5I1RWTF808BPPbkt7agjuz50pCdXHxfgnCfUmHeeUz4yLI
+6cgOWkB9JISN567vAH68IInM9with782aIsVLf2Fs5pQqxECAwEAAaNdMFswOgYD
+VR0RBDMwMYILZHAudWNzZi5lZHWGImh0dHBzOi8vZHAudWNzZi5lZHUvaWRwL3No
+aWJib2xldGgwHQYDVR0OBBYEFDfsmZZFJeq4xHogyRDy+1N69EEKMA0GCSqGSIb3
+DQEBBQUAA4IBAQBiK5W3RyQc/LL+FOy9mQIFzmobtJCGYUHwn/jMzZ+FdiV688MO
+A94AHGnxlvjjlVE7sjI83XgUK80IpLWz1QtCN9Pcwo5M0tNCxOFAkIe1xRadZmN4
+LpFOenH8vd5TF7DjrozFivFC4+l/mTTW4hfl+RaR34zgrzBAv+fUNrq7cNrid11w
+0h17HNqD964TR4QphmFyIrFR9skSs+41ScRMa4c7Svel8p4f+ptoATHSlSm0OZay
+jktgJp4o+Ld8xiH8Q5oLQ/qNG0hx9IRMaum9h0HCnxwHKsrxcJW2/A/CVhaVlj4J
+p/B3Zs13i2Wc6VGZGK1rfVetLqSnvfVPnT+h</ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <KeyDescriptor use="encryption">
+            <ds:KeyInfo>
+                <ds:X509Data>
+                    <ds:X509Certificate>MIIDFzCCAf+gAwIBAgIUW2hLRYSTq6yflHpRZ5ZBXty14rYwDQYJKoZIhvcNAQEF
+BQAwFjEUMBIGA1UEAxMLZHAudWNzZi5lZHUwHhcNMDkwODI5MDQwMzU5WhcNMjkw
+ODI5MDQwMzU5WjAWMRQwEgYDVQQDEwtkcC51Y3NmLmVkdTCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBAK+WY9j/fuMEQ2u4mKKeU5LXO+mi7BKKkJP3PUN0
+Iz4whL/M9uTR+C7x6DCVbi4CXNia8hmoNbWIKCKto9UJT/e+Y4y+dZjC4TLcIvdU
+og7x4/3qlcwI76jkomyL5uy2/7Ow+l/pmX99wph+K4/d8EpwE3NTXcFOVv1D8M3p
+UrVEfT1aoAm7p4SXS3uohM7KDXTljqtxImt/Q+cRFBImNyp7YTFp37024eMwtNfL
+JxEajodIFOCCYP6DmN5I1RWTF808BPPbkt7agjuz50pCdXHxfgnCfUmHeeUz4yLI
+6cgOWkB9JISN567vAH68IInM9with782aIsVLf2Fs5pQqxECAwEAAaNdMFswOgYD
+VR0RBDMwMYILZHAudWNzZi5lZHWGImh0dHBzOi8vZHAudWNzZi5lZHUvaWRwL3No
+aWJib2xldGgwHQYDVR0OBBYEFDfsmZZFJeq4xHogyRDy+1N69EEKMA0GCSqGSIb3
+DQEBBQUAA4IBAQBiK5W3RyQc/LL+FOy9mQIFzmobtJCGYUHwn/jMzZ+FdiV688MO
+A94AHGnxlvjjlVE7sjI83XgUK80IpLWz1QtCN9Pcwo5M0tNCxOFAkIe1xRadZmN4
+LpFOenH8vd5TF7DjrozFivFC4+l/mTTW4hfl+RaR34zgrzBAv+fUNrq7cNrid11w
+0h17HNqD964TR4QphmFyIrFR9skSs+41ScRMa4c7Svel8p4f+ptoATHSlSm0OZay
+jktgJp4o+Ld8xiH8Q5oLQ/qNG0hx9IRMaum9h0HCnxwHKsrxcJW2/A/CVhaVlj4J
+p/B3Zs13i2Wc6VGZGK1rfVetLqSnvfVPnT+h</ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://dp.ucsf.edu/idp/profile/Authn/SAML2/POST/SSO" index="0" />
+
+    </SPSSODescriptor>
+
+</EntityDescriptor>
+
+</EntitiesDescriptor>
+

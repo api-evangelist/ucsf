@@ -1,0 +1,80 @@
+name: UCSF Authentication
+description: >-
+  Authentication posture across every institution-operated UCSF surface API Evangelist was able
+  to reach and verify from the public internet.
+generated: '2026-08-19'
+method: probed
+source:
+  - https://profilesdeveloper.ucsf.edu/json-api
+  - https://solr.idl.ucsf.edu/solr/ltdl3/query?q=*:*&rows=0&wt=json
+  - https://mdq.incommon.org/entities/urn%3Amace%3Aincommon%3Aucsf.edu
+surfaces:
+  - api: UCSF Profiles JSON API
+    x-operator: institution
+    baseURL: https://api.profiles.ucsf.edu/json/v2/
+    scheme: none
+    keys_required: false
+    notes: >-
+      No credential of any kind. A `source` query parameter identifying the calling application
+      is required, but it is an attribution/courtesy identifier, not a secret and not verified —
+      it is not an API key. UCSF asks callers to make contact before production use, to add an
+      acknowledgement, to refresh cached data weekly, and to leave at least one second between
+      calls. Those are stated conditions of use, not enforced controls.
+    verified: '2026-08-19'
+    verified_status: 200
+  - api: UCSF Industry Documents Library Solr API
+    x-operator: institution
+    baseURL: https://solr.idl.ucsf.edu/solr/ltdl3
+    scheme: none
+    keys_required: false
+    notes: >-
+      Fully anonymous read access to the ltdl3 collection. Only the documented collection is
+      exposed; sibling Solr collection names return 403.
+    verified: '2026-08-19'
+    verified_status: 200
+  - api: UCSF Identity Provider (Shibboleth / InCommon)
+    x-operator: institution
+    entityID: urn:mace:incommon:ucsf.edu
+    metadata: https://dp.ucsf.edu/idp/shibboleth
+    metadata_federated: https://mdq.incommon.org/entities/urn%3Amace%3Aincommon%3Aucsf.edu
+    scheme: saml2
+    protocols:
+      - urn:oasis:names:tc:SAML:2.0:protocol
+      - urn:oasis:names:tc:SAML:1.1:protocol
+      - urn:mace:shibboleth:1.0
+    endpoints:
+      SingleSignOnService:
+        - binding: urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect
+          location: https://dp.ucsf.edu/idp/profile/SAML2/Redirect/SSO
+        - binding: urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST
+          location: https://dp.ucsf.edu/idp/profile/SAML2/POST/SSO
+        - binding: urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign
+          location: https://dp.ucsf.edu/idp/profile/SAML2/POST-SimpleSign/SSO
+        - binding: urn:mace:shibboleth:1.0:profiles:AuthnRequest
+          location: https://dp.ucsf.edu/idp/profile/Shibboleth/SSO
+      SingleLogoutService:
+        - binding: urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect
+          location: https://dp.ucsf.edu/idp/profile/SAML2/Redirect/SLO
+        - binding: urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST
+          location: https://dp.ucsf.edu/idp/profile/SAML2/POST/SLO
+    notes: >-
+      UCSF operates its own Shibboleth Identity Provider and registers it in the InCommon
+      Federation, which is re-exported to eduGAIN. This is machine-readable, signed, publicly
+      retrievable federation metadata and it is unambiguously institution-operated. A local copy
+      of the signed metadata retrieved on 2026-08-19 is stored alongside this file as
+      ucsf-incommon-saml-metadata.xml, alongside UCSF's own first-party copy retrieved from
+      https://dp.ucsf.edu/idp/shibboleth as ucsf-idp-self-published-metadata.xml — an EntitiesDescriptor
+      named https://ucsf-federation.edu/metadata/myaccess-ucsf.xml carrying an IDPSSODescriptor, an
+      AttributeAuthorityDescriptor, an SPSSODescriptor and shibmd:Scope ucsf.edu. UCSF separately fronts interactive login with Okta at
+      login.ucsf.edu; the federated SAML entity remains dp.ucsf.edu.
+    verified: '2026-08-19'
+    verified_status: 200
+gated:
+  - host: unified-api.ucsf.edu
+    x-operator: institution
+    observed_status: 403
+    notes: >-
+      Live host under ucsf.edu fronted by a Citrix NetScaler JavaScript challenge. No public
+      documentation for it was located, so no surface is claimed from it. Recorded as evidence
+      that UCSF runs an API gateway, not as a consumable API.
+    verified: '2026-08-19'

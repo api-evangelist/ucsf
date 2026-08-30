@@ -1,0 +1,65 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "idl": "https://www.industrydocuments.ucsf.edu/vocab#",
+    "@vocab": "https://www.industrydocuments.ucsf.edu/vocab#",
+    "id": "schema:identifier",
+    "title": "schema:name",
+    "description": "schema:description",
+    "author": "schema:author",
+    "mentioned": "schema:mentions",
+    "pages": "schema:numberOfPages",
+    "documentdateiso": {
+      "@id": "schema:dateCreated",
+      "@type": "schema:DateTime"
+    },
+    "documentdate": "idl:documentDateDisplay",
+    "dateaddeducsf": {
+      "@id": "schema:datePublished",
+      "@type": "schema:DateTime"
+    },
+    "collection": "schema:isPartOf",
+    "collectioncode": "idl:collectionCode",
+    "industry": "idl:industry",
+    "type": "schema:genre",
+    "brand": "schema:brand",
+    "case": "idl:litigationCase",
+    "witness": "idl:witness",
+    "bates": "idl:batesNumber",
+    "batesexpanded": "idl:batesRange",
+    "box": "idl:archivalBox",
+    "availability": "schema:conditionsOfAccess",
+    "tid": "idl:transferIdentifier",
+    "cited": "schema:citation"
+  },
+  "@type": "schema:DataCatalog",
+  "@id": "https://www.industrydocuments.ucsf.edu/",
+  "name": "UCSF Industry Documents Library",
+  "url": "https://www.industrydocuments.ucsf.edu/",
+  "description": "Archive of 28.2 million internal industry documents from the tobacco, drug, chemical, food, fossil fuel and opioid industries, produced in litigation and preserved by the UCSF Library Center for Knowledge Management. Queryable through a public Apache Solr API.",
+  "provider": {
+    "@type": "schema:CollegeOrUniversity",
+    "name": "University of California, San Francisco",
+    "url": "https://www.ucsf.edu/"
+  },
+  "isAccessibleForFree": true,
+  "distribution": {
+    "@type": "schema:DataDownload",
+    "contentUrl": "https://solr.idl.ucsf.edu/solr/ltdl3/query",
+    "encodingFormat": [
+      "application/json",
+      "application/xml",
+      "text/csv"
+    ]
+  },
+  "x-provenance": {
+    "generated": "2026-08-19",
+    "method": "derived",
+    "x-operator": "institution",
+    "source": [
+      "https://www.industrydocuments.ucsf.edu/wp-content/uploads/2022/02/IndustryDocumentsDataAPI_v5.pdf",
+      "https://solr.idl.ucsf.edu/solr/ltdl3/query?q=id:kylw0221&wt=json"
+    ],
+    "note": "schema.org mapping for the IDL Solr document record, derived by API Evangelist. UCSF publishes no JSON-LD context for this corpus."
+  }
+}

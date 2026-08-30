@@ -1,0 +1,17 @@
+name: UCSF API Scopes
+description: >-
+  Authorization scopes across UCSF's institution-operated public surfaces.
+generated: '2026-08-19'
+method: probed
+source:
+  - https://profilesdeveloper.ucsf.edu/json-api
+  - https://solr.idl.ucsf.edu/solr/ltdl3/query?q=*:*&rows=0&wt=json
+scopes: []
+finding: >-
+  No scope system exists on either institution-operated public API. Both the UCSF Profiles JSON
+  API and the UCSF Industry Documents Library Solr API are anonymous, read-only, and undifferentiated
+  — every caller sees exactly the same corpus, and there is no token, consent screen, or permission
+  boundary to describe. This is an accurate absence, not a gap in the research: a public archive
+  and a public directory of researchers have nothing to scope. Scoped authorization at UCSF lives
+  behind the SAML identity provider (urn:mace:incommon:ucsf.edu) and behind the gated
+  unified-api.ucsf.edu gateway, neither of which publishes a machine-readable scope inventory.

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" ID="_adf9f3f3-0737-4fb8-82c7-a5c7520796fc" entityID="urn:mace:incommon:ucsf.edu" validUntil="2026-09-02T20:37:10.128Z"><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/><Reference URI="#_adf9f3f3-0737-4fb8-82c7-a5c7520796fc"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/><DigestValue>UQfKDULmRDuXrZiAK8yF5/0GibRA1U5gxdFrUeeM/Ac=</DigestValue></Reference></SignedInfo><SignatureValue>Cs4NzuxdiwxPQELVfJ9mKkRyN6TrYnbNuyeoFubA+6MlfZWDKM2XjFGLRxkgz4zieG57MmXJvGsa
+64fFqvODpjJG2EfPCR67PxyKYX56sXOgKBsTWO/hzNZVgmvjcDuB7CN8N8mceY0oq9qU6xZpd7S8
+yTiWCUcI7/ju7tYu4HhF6V2zyTvpsWQGf8iQvo+56YV1dIGtoCOzc56jYWCvAJ0pcHD6WdCKx9Or
+FFKU3tCpD9njfkk7iiLYTTN/wxklCKl1N/e7MLXJaiizu0Rg6L34to3rE/fZHJMB+a7WI6AIiejy
++vi0U+XqC6Hjnmx9O+J1iKK5+a0nZnBcwDUtybK0brTR7VtF7NuGyANXLQXQ9YNiy8qOMo/yM8+x
+FzMJEZ9w6xQ5v6TmHBGLtTfVaTBXDZBqu8emvln1qTIOgHOwHGivtaDyBxSPd3KkeA94GPsES5qZ
+Jx68vWNZ4E8GSu5z1cWH3osmkEtsXaK3Jeepf8/MsRrOC4tbpWHUuCWf</SignatureValue></Signature>
+  <Extensions>
+    <mdrpi:RegistrationInfo xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi" registrationAuthority="https://incommon.org"/>
+    <mdattr:EntityAttributes xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute">
+      <saml:Attribute xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" Name="http://macedir.org/entity-category-support" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+        <saml:AttributeValue>http://id.incommon.org/category/research-and-scholarship</saml:AttributeValue>
+        <saml:AttributeValue>http://refeds.org/category/research-and-scholarship</saml:AttributeValue>
+      </saml:Attribute>
+      <saml:Attribute xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" Name="urn:oasis:names:tc:SAML:attribute:assurance-certification" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+        <saml:AttributeValue>https://refeds.org/sirtfi</saml:AttributeValue>
+      </saml:Attribute>
+      <saml:Attribute xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" Name="http://macedir.org/entity-category" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+        <saml:AttributeValue>http://id.incommon.org/category/registered-by-incommon</saml:AttributeValue>
+      </saml:Attribute>
+    </mdattr:EntityAttributes>
+  </Extensions>
+  <IDPSSODescriptor errorURL="https://dp.ucsf.edu/idp/error.html" protocolSupportEnumeration="urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+    <Extensions>
+      <shibmd:Scope xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" regexp="false">ucsf.edu</shibmd:Scope>
+      <mdui:UIInfo xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui">
+        <mdui:DisplayName xml:lang="en">University of California, San Francisco</mdui:DisplayName>
+        <mdui:Description xml:lang="en">MyAccess login for the University of California, San Francisco</mdui:Description>
+        <mdui:InformationURL xml:lang="en">https://wiki.library.ucsf.edu/display/IAM/MyAccess</mdui:InformationURL>
+        <mdui:PrivacyStatementURL xml:lang="en">https://it.ucsf.edu/sites/it.ucsf.edu/files/ucsf_campus_security_and_privacy_attestation_statement.pdf</mdui:PrivacyStatementURL>
+        <mdui:Logo height="107" width="130" xml:lang="en">https://identity.ucsf.edu/sites/g/files/tkssra266/f/wysiwyg/logo_0.jpg</mdui:Logo>
+      </mdui:UIInfo>
+    </Extensions>
+    <KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <!-- Serial No. 521843994722769626125675590332345574388923753142, expires on Wed Aug 29 04:03:59 2029 GMT -->
+          <ds:X509Certificate>
+MIIDFzCCAf+gAwIBAgIUW2hLRYSTq6yflHpRZ5ZBXty14rYwDQYJKoZIhvcNAQEF
+BQAwFjEUMBIGA1UEAxMLZHAudWNzZi5lZHUwHhcNMDkwODI5MDQwMzU5WhcNMjkw
+ODI5MDQwMzU5WjAWMRQwEgYDVQQDEwtkcC51Y3NmLmVkdTCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBAK+WY9j/fuMEQ2u4mKKeU5LXO+mi7BKKkJP3PUN0
+Iz4whL/M9uTR+C7x6DCVbi4CXNia8hmoNbWIKCKto9UJT/e+Y4y+dZjC4TLcIvdU
+og7x4/3qlcwI76jkomyL5uy2/7Ow+l/pmX99wph+K4/d8EpwE3NTXcFOVv1D8M3p
+UrVEfT1aoAm7p4SXS3uohM7KDXTljqtxImt/Q+cRFBImNyp7YTFp37024eMwtNfL
+JxEajodIFOCCYP6DmN5I1RWTF808BPPbkt7agjuz50pCdXHxfgnCfUmHeeUz4yLI
+6cgOWkB9JISN567vAH68IInM9with782aIsVLf2Fs5pQqxECAwEAAaNdMFswOgYD
+VR0RBDMwMYILZHAudWNzZi5lZHWGImh0dHBzOi8vZHAudWNzZi5lZHUvaWRwL3No
+aWJib2xldGgwHQYDVR0OBBYEFDfsmZZFJeq4xHogyRDy+1N69EEKMA0GCSqGSIb3
+DQEBBQUAA4IBAQBiK5W3RyQc/LL+FOy9mQIFzmobtJCGYUHwn/jMzZ+FdiV688MO
+A94AHGnxlvjjlVE7sjI83XgUK80IpLWz1QtCN9Pcwo5M0tNCxOFAkIe1xRadZmN4
+LpFOenH8vd5TF7DjrozFivFC4+l/mTTW4hfl+RaR34zgrzBAv+fUNrq7cNrid11w
+0h17HNqD964TR4QphmFyIrFR9skSs+41ScRMa4c7Svel8p4f+ptoATHSlSm0OZay
+jktgJp4o+Ld8xiH8Q5oLQ/qNG0hx9IRMaum9h0HCnxwHKsrxcJW2/A/CVhaVlj4J
+p/B3Zs13i2Wc6VGZGK1rfVetLqSnvfVPnT+h
+          </ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </KeyDescriptor>
+    <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://dp.ucsf.edu/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/>
+    <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://dp.ucsf.edu/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
+    <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://dp.ucsf.edu/idp/profile/SAML2/POST/SLO"/>
+    <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://dp.ucsf.edu/idp/profile/SAML2/Redirect/SLO"/>
+    <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://dp.ucsf.edu/idp/profile/Shibboleth/SSO"/>
+    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://dp.ucsf.edu/idp/profile/SAML2/POST/SSO"/>
+    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://dp.ucsf.edu/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://dp.ucsf.edu/idp/profile/SAML2/Redirect/SSO"/>
+  </IDPSSODescriptor>
+  <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+    <Extensions>
+      <shibmd:Scope xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" regexp="false">ucsf.edu</shibmd:Scope>
+    </Extensions>
+    <KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <!-- Serial No. 521843994722769626125675590332345574388923753142, expires on Wed Aug 29 04:03:59 2029 GMT -->
+          <ds:X509Certificate>
+MIIDFzCCAf+gAwIBAgIUW2hLRYSTq6yflHpRZ5ZBXty14rYwDQYJKoZIhvcNAQEF
+BQAwFjEUMBIGA1UEAxMLZHAudWNzZi5lZHUwHhcNMDkwODI5MDQwMzU5WhcNMjkw
+ODI5MDQwMzU5WjAWMRQwEgYDVQQDEwtkcC51Y3NmLmVkdTCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBAK+WY9j/fuMEQ2u4mKKeU5LXO+mi7BKKkJP3PUN0
+Iz4whL/M9uTR+C7x6DCVbi4CXNia8hmoNbWIKCKto9UJT/e+Y4y+dZjC4TLcIvdU
+og7x4/3qlcwI76jkomyL5uy2/7Ow+l/pmX99wph+K4/d8EpwE3NTXcFOVv1D8M3p
+UrVEfT1aoAm7p4SXS3uohM7KDXTljqtxImt/Q+cRFBImNyp7YTFp37024eMwtNfL
+JxEajodIFOCCYP6DmN5I1RWTF808BPPbkt7agjuz50pCdXHxfgnCfUmHeeUz4yLI
+6cgOWkB9JISN567vAH68IInM9with782aIsVLf2Fs5pQqxECAwEAAaNdMFswOgYD
+VR0RBDMwMYILZHAudWNzZi5lZHWGImh0dHBzOi8vZHAudWNzZi5lZHUvaWRwL3No
+aWJib2xldGgwHQYDVR0OBBYEFDfsmZZFJeq4xHogyRDy+1N69EEKMA0GCSqGSIb3
+DQEBBQUAA4IBAQBiK5W3RyQc/LL+FOy9mQIFzmobtJCGYUHwn/jMzZ+FdiV688MO
+A94AHGnxlvjjlVE7sjI83XgUK80IpLWz1QtCN9Pcwo5M0tNCxOFAkIe1xRadZmN4
+LpFOenH8vd5TF7DjrozFivFC4+l/mTTW4hfl+RaR34zgrzBAv+fUNrq7cNrid11w
+0h17HNqD964TR4QphmFyIrFR9skSs+41ScRMa4c7Svel8p4f+ptoATHSlSm0OZay
+jktgJp4o+Ld8xiH8Q5oLQ/qNG0hx9IRMaum9h0HCnxwHKsrxcJW2/A/CVhaVlj4J
+p/B3Zs13i2Wc6VGZGK1rfVetLqSnvfVPnT+h
+          </ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </KeyDescriptor>
+    <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://dp.ucsf.edu/idp/profile/SAML1/SOAP/AttributeQuery"/>
+    <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://dp.ucsf.edu/idp/profile/SAML2/SOAP/AttributeQuery"/>
+  </AttributeAuthorityDescriptor>
+  <Organization>
+    <OrganizationName xml:lang="en">University of California, San Francisco</OrganizationName>
+    <OrganizationDisplayName xml:lang="en">University of California, San Francisco</OrganizationDisplayName>
+    <OrganizationURL xml:lang="en">http://www.ucsf.edu/</OrganizationURL>
+  </Organization>
+  <ContactPerson contactType="administrative">
+    <GivenName>Kevin Dale</GivenName>
+    <EmailAddress>mailto:kevin.dale@ucsf.edu</EmailAddress>
+  </ContactPerson>
+  <ContactPerson contactType="technical">
+    <GivenName>Identity and Access Management Admin</GivenName>
+    <EmailAddress>mailto:IAM-Admin@ucsf.edu</EmailAddress>
+  </ContactPerson>
+  <ContactPerson xmlns:remd="http://refeds.org/metadata" contactType="other" remd:contactType="http://refeds.org/metadata/contactType/security">
+    <GivenName>Patrick Phelan</GivenName>
+    <EmailAddress>mailto:Patrick.Phelan@ucsf.edu</EmailAddress>
+  </ContactPerson>
+</EntityDescriptor>

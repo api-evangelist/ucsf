@@ -1,0 +1,106 @@
+name: UCSF Education-Regime Domain Standard Conformance
+description: >-
+  Conformance of UCSF's surfaces against the Kin Score `education` regulatory regime standards
+  list. Reward-only: every entry below is evidenced by a fetched artifact or a live response,
+  and standards with no evidence are recorded as not_found rather than assumed.
+generated: '2026-08-19'
+method: probed
+source:
+  - https://dp.ucsf.edu/idp/shibboleth
+  - https://mdq.incommon.org/entities/urn%3Amace%3Aincommon%3Aucsf.edu
+  - https://api.profiles.ucsf.edu/json/v2/?source=apievangelist.com&ProfilesURLName=kirsten.bibbins-domingo
+  - https://escholarship.org/oai?verb=ListRecords&metadataPrefix=oai_dc&set=ucsf
+  - https://api.datacite.org/dois?query=publisher:%22UCSF%22
+standards:
+  - standard: saml
+    status: conformant
+    x-operator: institution
+    evidence:
+      location: https://mdq.incommon.org/entities/urn%3Amace%3Aincommon%3Aucsf.edu
+      local_copy: authentication/ucsf-incommon-saml-metadata.xml
+      first_party_location: https://dp.ucsf.edu/idp/shibboleth
+      first_party_local_copy: authentication/ucsf-idp-self-published-metadata.xml
+      detail: >-
+        Signed SAML 2.0 EntityDescriptor with entityID urn:mace:incommon:ucsf.edu, containing an
+        IDPSSODescriptor with protocolSupportEnumeration
+        "urn:mace:shibboleth:1.0 urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol"
+        and SingleSignOnService / SingleLogoutService endpoints at dp.ucsf.edu.
+      status: 200
+      verified: '2026-08-19'
+  - standard: shibboleth
+    status: conformant
+    x-operator: institution
+    evidence:
+      location: https://mdq.incommon.org/entities/urn%3Amace%3Aincommon%3Aucsf.edu
+      local_copy: authentication/ucsf-incommon-saml-metadata.xml
+      first_party_location: https://dp.ucsf.edu/idp/shibboleth
+      first_party_local_copy: authentication/ucsf-idp-self-published-metadata.xml
+      detail: >-
+        IDPSSODescriptor carries shibmd:Scope elements and a
+        urn:mace:shibboleth:1.0:profiles:AuthnRequest SingleSignOnService binding at
+        https://dp.ucsf.edu/idp/profile/Shibboleth/SSO, and errorURL https://dp.ucsf.edu/idp/error.html —
+        a Shibboleth IdP deployment registered in the InCommon Federation.
+      status: 200
+      verified: '2026-08-19'
+  - standard: orcid
+    status: conformant
+    x-operator: institution
+    evidence:
+      location: https://api.profiles.ucsf.edu/json/v2/?source=apievangelist.com&ProfilesURLName=kirsten.bibbins-domingo
+      contract_location: openapi/ucsf-profiles-json-openapi.yml#/components/schemas/Profile/properties/ORCID
+      detail: >-
+        The UCSF Profiles JSON API returns ORCID as a first-class field on the person record.
+        Probed value 0000-0002-8962-0622 conforms to the ORCID iD check-digit format.
+      status: 200
+      verified: '2026-08-19'
+  - standard: oai-pmh
+    status: conformant
+    x-operator: tenant
+    evidence:
+      location: https://escholarship.org/oai?verb=ListRecords&metadataPrefix=oai_dc&set=ucsf
+      detail: >-
+        UCSF scholarly output is harvestable as a named OAI-PMH set (`ucsf`) returning oai_dc
+        records with ark:/13030/ identifiers. The endpoint is operated by the California Digital
+        Library for the whole University of California system, not by UCSF — the records are
+        UCSF's, the OAI-PMH implementation is not. Credited as a tenant relationship only.
+      status: 200
+      verified: '2026-08-19'
+  - standard: datacite
+    status: conformant
+    x-operator: tenant
+    evidence:
+      location: https://api.datacite.org/dois?query=publisher:%22UCSF%22
+      detail: >-
+        1,306 DataCite DOIs carry a UCSF publisher string, minted through UCSF's Dryad-hosted
+        data repository at datashare.ucsf.edu. Dryad and the California Digital Library run the
+        DataCite integration; UCSF is the depositing institution.
+      status: 200
+      verified: '2026-08-19'
+  - standard: crossref
+    status: not_found
+    detail: No UCSF-operated Crossref deposit surface located.
+  - standard: scim
+    status: not_found
+    detail: No SCIM provisioning endpoint or documentation located on any ucsf.edu host.
+  - standard: lti
+    status: not_found
+    detail: >-
+      UCSF runs a Moodle-based learning environment (a UCSF CKM Kaltura Moodle plugin exists at
+      github.com/ucsf-ckm), which implies LTI internally, but no publicly reachable LTI
+      registration or platform configuration endpoint was found. Not credited.
+  - standard: oneroster
+    status: not_found
+    detail: No OneRoster surface located.
+  - standard: ed-fi
+    status: not_found
+    detail: No Ed-Fi surface located. Ed-Fi is a K-12 standard and is not expected here.
+  - standard: caliper
+    status: not_found
+    detail: No Caliper Analytics event surface located.
+  - standard: qti
+    status: not_found
+    detail: No QTI assessment surface located.
+summary:
+  institution_operated_conformances: 3
+  tenant_conformances: 2
+  not_found: 7

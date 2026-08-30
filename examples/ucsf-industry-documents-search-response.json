@@ -1,0 +1,167 @@
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 39,
+    "params": {
+      "q": "(author:glantz AND industry:tobacco)",
+      "rows": "2",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 1222,
+    "start": 0,
+    "numFoundExact": true,
+    "docs": [
+      {
+        "id": "znvy0132",
+        "tid": "qhg04f00",
+        "collection": [
+          "Brown & Williamson Records",
+          "Master Settlement Agreement"
+        ],
+        "collectioncode": [
+          "bw",
+          "msa"
+        ],
+        "box": "1911",
+        "availability": [
+          "public",
+          "no restrictions"
+        ],
+        "case": [
+          "10004026"
+        ],
+        "title": "THE TOBACCO INDUSTRY S POLITICAL TACTICS IN CALIFORNIA SINCE 780000",
+        "author": [
+          "GLANTZ-SA",
+          "GLANTZ,SA",
+          "LOVEDAY-PL",
+          "LOVEDAY, PL"
+        ],
+        "documentdate": "1983 July 10",
+        "type": [
+          "chart",
+          "graphic",
+          "log",
+          "meeting materials",
+          "presentation",
+          "report",
+          "routing slip",
+          "speech"
+        ],
+        "pages": 17,
+        "mentioned": [
+          "FIELD,M/X",
+          "GREENE,W/X",
+          "GREFE,E/PHILIP MORRIS",
+          "LARSON,H/WOODWARD MCDOWELL",
+          "LOOMAN,D/X",
+          "PADBERG,E/X",
+          "RHOADS,J/UNIV PA",
+          "WOODWARD,R/WOODWARD MCDOWELL",
+          "X/UNIV CA SAN FRANCISCO",
+          "X/AMERICAN ASSN OF POLITICAL CONSULTANT",
+          "X/CALIFORNIANS FOR NONSMOKERS RIGHTS",
+          "X/CALIFORNIANS FOR COMMON SENSE",
+          "X/BOARD OF CTY COMMISSIONERS",
+          "X/TOBACCO INSTITUTE",
+          "X/SAN FRANCISCO BOARD OF SUPERVISORS",
+          "X/SAN FRANCISCO EXAMINER",
+          "X/WOODWARD MCDOWELL",
+          "X/US TOBACCO JOURNAL",
+          "X/ECONOMIC RESEARCH ASSOC",
+          "X/AMERICAN CANCER SOCIETY",
+          "X/ASSOCIATED PRESS",
+          "X/R.J. REYNOLDS",
+          "X/PHILIP MORRIS",
+          "X/LORILLARD",
+          "X/LIGGETT & MYERS, LIGGETT GROUP",
+          "X/TOBACCO REPORTER",
+          "X/FEDERAL TRADE COMMISSION",
+          "X/ROPER ORG",
+          "X/UNIV CA SAN FRANCISCO",
+          "X/CA STATE SENATE",
+          "X/SACRAMENTO BEE",
+          "X/LOS ANGELES TIMES",
+          "HUMBER/X",
+          "PEPPLES,E/X",
+          "RUSSELL/X",
+          "S,RH/X",
+          "WELLS,JK/X"
+        ],
+        "description": "MARG, MARGINALIA",
+        "file": "STATES CALIFORNIA PENDING LEGISLATION SAN FRANCISCO 830000",
+        "bates": "680579233-680579249",
+        "batesalternate": "680579233; 680579249",
+        "minnesotarequestnumber": "A4",
+        "dateproduced": "1997 September 26",
+        "dateshipped": "1997 September 26",
+        "dateaddeducsf": "2002 February 01",
+        "dateaddedindustry": "1998 November 23",
+        "datemodifiedindustry": "2012 April 25; 2012 October 09"
+      },
+      {
+        "id": "qpnl0052",
+        "tid": "dpl03c00",
+        "collection": [
+          "RJ Reynolds Records",
+          "Master Settlement Agreement"
+        ],
+        "collectioncode": [
+          "rj",
+          "msa"
+        ],
+        "box": "NA; RJR9941",
+        "availability": [
+          "public",
+          "no restrictions"
+        ],
+        "case": [
+          "US RESEARCH AND MANUFACTURING DOCUMENT PRODUCTION"
+        ],
+        "area": "OPERATIONS; ENGINEERING; BOHANON HR; SR PRINCIPAL ENGINEER",
+        "topic": "CTR/TIRC/TI;  TOBACCO INSTITUTE",
+        "title": "ECNOMIC IMPACT OF GOVERNMENT MANDATED SMOKING RESTRICTIONS ON THE RESTAURANT INDUSTRY.",
+        "author": [
+          "RJR",
+          "BOHANON H",
+          "GLANTZ S",
+          "TI",
+          "GLANTZ & SMITH",
+          "OSHA",
+          "WAXMAN H",
+          "SENATE",
+          "EPA",
+          "CRAIG",
+          "NCSU",
+          "NRA"
+        ],
+        "documentdate": "1995 April 19",
+        "type": [
+          "report"
+        ],
+        "pages": 24,
+        "mentioned": [
+          "LIST OF FOOTNOTES",
+          "HANSEN & LOTT",
+          "MADD"
+        ],
+        "description": "Marginalia;  Y",
+        "bates": "525616666-525616689",
+        "minnesotarequestnumber": "US RESEARCH AND MANUFACTURING DOCUMENT PRODUCTION",
+        "dateshipped": "2015 August 06",
+        "dateaddeducsf": "2003 January 15",
+        "dateaddedindustry": "2002 October 15",
+        "datemodifiedindustry": "2012 April 17; 2015 August 06"
+      }
+    ]
+  },
+  "_provenance": {
+    "generated": "2026-08-19",
+    "method": "probed",
+    "source": "https://solr.idl.ucsf.edu/solr/ltdl3/query?q=(author:glantz AND industry:tobacco)&rows=2&wt=json",
+    "status": 200,
+    "note": "Live response captured 2026-08-19. Truncated to the first two of 1,222 matched documents for readability; numFound and field shape unmodified."
+  }
+}
