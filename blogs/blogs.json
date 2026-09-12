@@ -2,20 +2,20 @@
   "repo": "ucsf",
   "feeds": [
     {
-      "source": "https://www.ucsf.edu/news",
-      "feed_url": "https://www.ucsf.edu/news",
+      "source": "https://profilesdeveloper.ucsf.edu/contact-and-support",
+      "feed_url": "https://profilesdeveloper.ucsf.edu/contact-and-support",
       "title": "",
       "saved": 0,
       "method": "none"
     },
     {
-      "source": "https://profilesdeveloper.ucsf.edu/contact-and-support",
-      "feed_url": "https://profilesdeveloper.ucsf.edu/contact-and-support",
+      "source": "https://www.ucsf.edu/news",
+      "feed_url": "https://www.ucsf.edu/news",
       "title": "",
       "saved": 0,
       "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-08-30T22:33:40Z"
+  "fetched": "2026-09-06T19:17:18Z"
 }
