@@ -151,6 +151,12 @@ apis:
   - Repository
   - Dryad
   - DataCite
+  - Tenants
+  tags_raw:
+  - Research Data
+  - Repository
+  - Dryad
+  - DataCite
   - Tenant
   properties:
   - type: ResearchRepository
@@ -168,6 +174,12 @@ apis:
   humanURL: https://escholarship.org/uc/ucsf
   baseURL: https://escholarship.org/oai?verb=ListRecords&metadataPrefix=oai_dc&set=ucsf
   tags:
+  - OAI-PMH
+  - Open Access
+  - Repository
+  - Tenants
+  - Harvesting
+  tags_raw:
   - OAI-PMH
   - Open Access
   - Repository
@@ -190,6 +202,12 @@ apis:
   - Discovery
   - Primo
   - Ex Libris
+  - Tenants
+  tags_raw:
+  - Library
+  - Discovery
+  - Primo
+  - Ex Libris
   - Tenant
   properties:
   - type: LibraryCatalog
@@ -207,6 +225,11 @@ apis:
     cohort produce. Verified 2026-08-19.
   humanURL: https://coursecatalog.ucsf.edu/
   tags:
+  - Course Catalog
+  - Registrar
+  - CourseLeaf
+  - Tenants
+  tags_raw:
   - Course Catalog
   - Registrar
   - CourseLeaf
