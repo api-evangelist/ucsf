@@ -1,0 +1,24 @@
+{
+  "provider": "ucsf",
+  "sources": [
+    "_original/ucsf-industry-documents-solr-openapi.yml",
+    "_original/ucsf-profiles-json-openapi.yml"
+  ],
+  "outputs": [
+    "ucsf-documents-api-openapi.yml",
+    "ucsf-profiles-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "ucsf-industry-documents-solr-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "ucsf-profiles-json-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "ucsf-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "ucsf-profiles-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
+}

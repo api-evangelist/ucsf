@@ -1,0 +1,48 @@
+name: UCSF API Errors
+description: Error responses observed on UCSF's institution-operated public APIs.
+generated: '2026-08-19'
+method: probed
+source:
+  - https://api.profiles.ucsf.edu/json/v2/
+  - https://profilesdeveloper.ucsf.edu/json-api
+  - https://solr.idl.ucsf.edu/solr/ltdl3/query
+apis:
+  - name: UCSF Profiles JSON API
+    x-operator: institution
+    format: >-
+      Errors are returned as a JSON object carrying a single human-readable `error` string.
+      UCSF documents that callers should test for the presence of that key.
+    errors:
+      - status: 400
+        condition: No identifier parameter supplied, or an invalid request.
+        body_shape: '{ "error": "<human-readable message>" }'
+        observed_example: >-
+          You didn't specify an identifier type to look up! We were expecting to see one of the
+          following: ?EPPN=... / ?EmployeeID=... / ?FNO=... / ?Person=... / ?ProfilesNodeID=... /
+          ?ProfilesURLName=... / ?URL=...
+        verified: '2026-08-19'
+      - status: 404
+        condition: Identifier is well formed but no matching person exists.
+        body_shape: '{ "error": "<human-readable message>" }'
+        documented: true
+    gaps:
+      - No machine-readable error code or type; only prose in a single string.
+      - No RFC 7807 / RFC 9457 problem+json representation.
+      - No documented rate-limit response — the one-second inter-call interval is a request, not enforced.
+  - name: UCSF Industry Documents Library Solr API
+    x-operator: institution
+    format: >-
+      Errors are raw Apache Solr error envelopes; UCSF adds no error contract of its own and its
+      published API documentation does not describe failure modes at all.
+    errors:
+      - status: 403
+        condition: Request for a Solr collection other than the published ltdl3 collection.
+        body_shape: empty body
+        verified: '2026-08-19'
+      - status: 400
+        condition: Malformed Solr query syntax.
+        body_shape: Solr error envelope in the requested writer type.
+        documented: false
+    gaps:
+      - Failure modes are undocumented; a consumer learns them by triggering them.
+      - Error shape varies with the `wt` writer type rather than being stable.

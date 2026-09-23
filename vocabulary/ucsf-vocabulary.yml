@@ -1,0 +1,93 @@
+name: UCSF API Vocabulary
+description: >-
+  The vocabulary actually used across UCSF's institution-operated public APIs, with the
+  external standards each term borrows from. Derived from UCSF's own documentation and from
+  live probed responses — UCSF publishes no vocabulary document.
+generated: '2026-08-19'
+method: derived
+x-operator: institution
+source:
+  - https://profilesdeveloper.ucsf.edu/json-api
+  - https://www.industrydocuments.ucsf.edu/wp-content/uploads/2022/02/IndustryDocumentsDataAPI_v5.pdf
+  - https://api.profiles.ucsf.edu/json/v2/
+  - https://solr.idl.ucsf.edu/solr/ltdl3/query
+domains:
+  - domain: Research networking (UCSF Profiles)
+    surface: https://api.profiles.ucsf.edu/json/v2/
+    terms:
+      - term: ORCID
+        definition: Persistent researcher identifier.
+        standard: ORCID (ISO 27729-adjacent); education-regime domain standard `orcid`.
+      - term: EPPN
+        definition: eduPerson Principal Name — the federated identity handle for a UCSF person.
+        standard: eduPerson / REFEDS schema, the same identity vocabulary the InCommon SAML IdP asserts.
+      - term: ProfilesURLName
+        definition: Human-readable slug in a profiles.ucsf.edu URL.
+        standard: local
+      - term: ProfilesNodeID
+        definition: Internal Profiles node identifier issued after Feb 2013.
+        standard: Profiles RNS (local); deprecated by UCSF.
+      - term: Person
+        definition: Legacy Profiles person identifier used before Feb 2013.
+        standard: local; deprecated by UCSF.
+      - term: FNO
+        definition: Legacy UCSF identifier resembling an email address; only pre-April-2018 codes supported.
+        standard: local; deprecated by UCSF.
+      - term: EmployeeID
+        definition: Nine-digit UCSF employee number.
+        standard: local; supported but explicitly discouraged by UCSF.
+      - term: School / Department / Title
+        definition: UCSF organisational placement of the person.
+        standard: local
+      - term: ResearchActivitiesAndFunding
+        definition: Current grant and funding record; supersedes NIHGrants_beta.
+        standard: local, sourced from NIH RePORTER project numbers.
+      - term: source
+        definition: Caller-supplied application or host identifier, required on every request.
+        standard: local; an attribution convention, not a credential.
+  - domain: Industry document archive (Industry Documents Library)
+    surface: https://solr.idl.ucsf.edu/solr/ltdl3
+    terms:
+      - term: id
+        definition: Eight-character document identifier, four letters then four digits, case-insensitive.
+        standard: local
+      - term: bates / batesexpanded
+        definition: Bates numbering applied to documents produced in litigation; batesexpanded holds the expanded range and is the field to query.
+        standard: US legal discovery convention (Bates numbering).
+      - term: case
+        definition: The litigation matter the document was produced in.
+        standard: local, carrying court case numbers.
+      - term: collection / collectioncode
+        definition: Named archival collection, e.g. "Brown & Williamson Records" / bw.
+        standard: local archival arrangement.
+      - term: industry
+        definition: Industry sector the document belongs to.
+        standard: 'local controlled list: tobacco, drug, chemical, food, fossilfuel, opioids'
+      - term: availability
+        definition: Access restriction status, e.g. "public", "no restrictions".
+        standard: local rights vocabulary.
+      - term: documentdate / documentdateiso
+        definition: Document date as a display string and as an ISO 8601 instant.
+        standard: ISO 8601 for documentdateiso only; documentdate is a non-parseable display string.
+      - term: mentioned
+        definition: People and organisations named inside the document.
+        standard: local
+      - term: witness
+        definition: Deposition or trial witness.
+        standard: local
+  - domain: Identity federation
+    surface: urn:mace:incommon:ucsf.edu
+    terms:
+      - term: entityID
+        definition: 'urn:mace:incommon:ucsf.edu — UCSF''s SAML entity identifier.'
+        standard: SAML 2.0 Metadata (OASIS)
+      - term: shibmd:Scope
+        definition: Security domain scope asserted by the UCSF Shibboleth IdP.
+        standard: 'urn:mace:shibboleth:metadata:1.0'
+      - term: SingleSignOnService / SingleLogoutService
+        definition: SAML front-channel endpoints at dp.ucsf.edu.
+        standard: SAML 2.0 bindings (HTTP-Redirect, HTTP-POST, HTTP-POST-SimpleSign)
+gaps:
+  - No shared vocabulary across the two data APIs — they were built by different UCSF units (CTSI and the Library Center for Knowledge Management) and share no field names.
+  - No JSON-LD, no SKOS, no controlled-vocabulary endpoint published for the IDL collection, brand, type or industry lists.
+  - The IDL "Field Names" reference is published as a web page, not as a machine-readable schema.

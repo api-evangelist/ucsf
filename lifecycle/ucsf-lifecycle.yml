@@ -1,0 +1,73 @@
+name: UCSF API Lifecycle
+description: >-
+  Versioning, deprecation and change-communication posture on UCSF's institution-operated
+  public APIs.
+generated: '2026-08-19'
+method: probed
+x-operator: institution
+source:
+  - https://profilesdeveloper.ucsf.edu/json-api
+  - https://www.industrydocuments.ucsf.edu/wp-content/uploads/2022/02/IndustryDocumentsDataAPI_v5.pdf
+apis:
+  - name: UCSF Profiles JSON API
+    versioning: URL path segment — /json/v2/. A v1 preceded it.
+    current_version: '2'
+    deprecation_practice: >-
+      Genuinely present and unusually explicit for a university surface. UCSF marks four of its
+      seven identifier parameters as deprecated in prose (ProfilesNodeID, Person, FNO,
+      EmployeeID), explains WHY each is discouraged, states that May 2018 invalidated every
+      NodeID and that legacy 2013–2018 NodeIDs are mapped only on a best-effort basis, and
+      ships an `api_notes` field inside the payload itself carrying per-field deprecation
+      messages ("Deprecated, use ResearchActivitiesAndFunding instead").
+    in_band_signalling: >-
+      Yes — deprecation notices travel in the response body via `api_notes`, so a machine
+      consumer can see them without reading the docs. Rare, and worth crediting.
+    change_communication: >-
+      No changelog, no release notes, no status page, no versioned announcements. UCSF instead
+      asks callers to make contact so it can avoid breaking them, which is a manual substitute
+      for a published change feed.
+    caching_guidance: Refresh cached data at least weekly (stated by UCSF).
+    rate_guidance: At least one second between successive calls (requested, not enforced).
+    verified: '2026-08-19'
+  - name: UCSF Industry Documents Library Solr API
+    versioning: >-
+      No API version. The Solr collection name carries an implicit generation marker (ltdl3);
+      the documentation PDF is versioned (v5).
+    current_version: 'ltdl3 collection; documentation v5 (2022)'
+    deprecation_practice: None published.
+    change_communication: >-
+      A "Release Notes" page exists in the IDL content CMS and the site states it releases
+      monthly, but neither is expressed as a machine-readable feed and neither is scoped to the
+      API. The bulk dataset export is refreshed only twice a year against a monthly-refreshed
+      website, and UCSF states this divergence plainly.
+    defects_observed:
+      - id: rows-parameter-ignored
+        detail: >-
+          The published documentation says "we only return 100 records at a time" and instructs
+          paging with &start=100. The deployed /query handler ignores `rows` entirely — rows=0,
+          rows=1, rows=5 and rows=100 each returned 1000 documents on 2026-08-19 — while
+          echoing the submitted value back in responseHeader.params. `start` is honoured. Any
+          consumer that followed the documented paging recipe would silently re-read the same
+          records. Documentation and deployment disagree.
+        evidence: https://solr.idl.ucsf.edu/solr/ltdl3/query?q=author:glantz&rows=1&wt=json
+        verified: '2026-08-19'
+      - id: stale-documentation-host
+        detail: >-
+          The API documentation page at /research-tools/api/ is now a client-side route in a
+          single-page application that returns the same 200 shell for every path, so the
+          documentation UCSF links to is no longer served at its own URL. The authoritative
+          PDF survives only in the Internet Archive.
+        evidence: https://web.archive.org/web/20230130203403/https://industrydocuments.ucsf.edu/research-tools/api/
+        verified: '2026-08-19'
+    verified: '2026-08-19'
+retired:
+  - name: Developer@UCSF API Portal
+    host: developer.ucsf.edu
+    status: unresolvable
+    detail: >-
+      Recorded as an institution surface in the 2026-06-03 profile. On 2026-08-19 the hostname
+      returned NXDOMAIN from Google (8.8.8.8), Cloudflare (1.1.1.1) and Quad9 (9.9.9.9), and the
+      Internet Archive holds ZERO snapshots of it at any time. It was therefore never a publicly
+      reachable surface — most likely a split-horizon, campus-only host. All pointers to it have
+      been removed rather than left to grade as unverified claims.
+    verified: '2026-08-19'

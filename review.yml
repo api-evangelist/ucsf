@@ -3,7 +3,7 @@ name: University of California, San Francisco
 description: University of California, San Francisco public developer/API footprint review for APIs.json cataloging.
 url: https://raw.githubusercontent.com/api-evangelist/ucsf/refs/heads/main/review.yml
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-08-19'
 reviews:
   - date: '2026-06-03'
     rating: 3
@@ -49,3 +49,66 @@ reviews:
       - url: https://www.linkedin.com/school/ucsf/
         status: 999
         note: Official LinkedIn school page; LinkedIn returns 999 to automated probes.
+  - date: '2026-08-19'
+    rating: 4
+    method: probed
+    summary: >-
+      Re-profiled under the API Evangelist university pipeline, which settles operator attribution
+      before saving any contract. UCSF holds up well: it operates TWO real institution-owned public
+      APIs, not one. The 2026-06-03 review missed the larger of the two — the UCSF Industry Documents
+      Library Solr API at solr.idl.ucsf.edu/solr/ltdl3, an anonymous public query interface over
+      28,298,987 archived industry documents, run by the UCSF Library Center for Knowledge Management
+      and documented by UCSF in its own "Industry Documents Data API v5" PDF. Also newly recorded:
+      UCSF's Shibboleth SAML 2.0 identity provider, published as signed metadata in the InCommon
+      Federation under entityID urn:mace:incommon:ucsf.edu with endpoints at dp.ucsf.edu, which is
+      institution-operated by definition and satisfies two education-regime domain standards at once.
+      Two corrections went the other way. developer.ucsf.edu returned NXDOMAIN from Google, Cloudflare
+      and Quad9 and has ZERO Internet Archive snapshots at any date, so it was never a publicly
+      reachable surface and all pointers to it were removed rather than left to grade as unverified
+      claims; the live UCSF gateway is unified-api.ucsf.edu, which answers only with a Citrix NetScaler
+      challenge and is recorded as evidence, not as an API. Four surfaces were re-labelled as tenant
+      relationships rather than UCSF engineering: Dryad (datashare.ucsf.edu), Ex Libris Primo
+      (search.library.ucsf.edu), CourseLeaf (coursecatalog.ucsf.edu) and the California Digital
+      Library's eScholarship OAI-PMH set. No vendor contract was saved under this institution.
+      One deployed-behavior defect was confirmed: the IDL Solr `rows` parameter is echoed back but
+      ignored, and the deployed page size is 1000 records against a documented 100.
+    endpoints:
+      - url: https://solr.idl.ucsf.edu/solr/ltdl3/query?q=*:*&rows=0&wt=json
+        status: 200
+        note: UCSF Industry Documents Library Solr API; numFound 28,298,987. Institution-operated, anonymous.
+      - url: https://solr.idl.ucsf.edu/solr/ltdl3/query?q=id:kylw0221&wt=json
+        status: 200
+        note: Single-document retrieval, matching UCSF's own worked example in its API PDF.
+      - url: https://mdq.incommon.org/entities/urn%3Amace%3Aincommon%3Aucsf.edu
+        status: 200
+        note: Signed SAML 2.0 metadata for UCSF's Shibboleth IdP. Institution-operated identity federation.
+      - url: https://api.profiles.ucsf.edu/json/v2/?source=apievangelist.com&ProfilesURLName=kirsten.bibbins-domingo
+        status: 200
+        note: Profiles JSON API still live; returns ORCID as a first-class field.
+      - url: https://api.profiles.ucsf.edu/json/v2/
+        status: 400
+        note: Documented error shape confirmed - JSON object with a single human-readable `error` string.
+      - url: https://cms.libckm.org/api/pages
+        status: 200
+        note: Industry Documents Library content API, 320 pages. UCSF Library CKM infrastructure.
+      - url: https://developer.ucsf.edu/
+        status: 0
+        note: NXDOMAIN from 8.8.8.8, 1.1.1.1 and 9.9.9.9. Zero Internet Archive snapshots ever. Pointers removed.
+      - url: https://unified-api.ucsf.edu/
+        status: 403
+        note: Live UCSF API gateway behind a Citrix NetScaler challenge. No public documentation found; nothing claimed.
+      - url: https://datashare.ucsf.edu/
+        status: 200
+        note: UCSF DataShare - Dryad platform. Tenant relationship; 1,306 DataCite DOIs carry a UCSF publisher string.
+      - url: https://escholarship.org/oai?verb=ListRecords&metadataPrefix=oai_dc&set=ucsf
+        status: 200
+        note: UCSF OAI-PMH set on the California Digital Library's eScholarship. Tenant, not UCSF-operated.
+      - url: https://coursecatalog.ucsf.edu/ribbit/index.cgi?page=getcourse.rjs&code=EPI
+        status: 404
+        note: CourseLeaf JSON endpoint not exposed. No public UCSF course or registrar API exists.
+      - url: https://data.ucsf.edu/api/3/action/package_list
+        status: 404
+        note: data.ucsf.edu is a Drupal data catalog, not CKAN. No open-data API.
+      - url: https://wynton.ucsf.edu/hpc/
+        status: 200
+        note: UCSF Wynton HPC cluster. Institution-operated research computing; documentation only, no API.

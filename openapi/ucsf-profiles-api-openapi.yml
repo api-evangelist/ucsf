@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   title: UCSF JSON Profiles API
   version: '2'
-  description: Public JSON API over UCSF Profiles, the research-networking platform operated by the UCSF Clinical and Translational Science Institute (CTSI). Returns the public record for a UCSF researcher, faculty member or postdoc — name, school, department, titles, ORCID iD, education and training, narrative, keywords, publications, clinical trials, and research activities and funding. GET requests return JSON with CORS support; JSONP is supported for legacy callers. This OpenAPI description is DERIVED by API Evangelist from UCSF's own developer documentation plus live probed responses; UCSF does not publish an OpenAPI document.
+  description: Public JSON API over UCSF Profiles, the research-networking platform operated by the UCSF Clinical and Translational Science Institute (CTSI).
   contact:
     name: UCSF Profiles / UCSF CTSI
     url: https://profilesdeveloper.ucsf.edu/
@@ -120,15 +120,6 @@ components:
           description: Human-readable error message.
       example:
         error: 'You didn''t specify an identifier type to look up! We were expecting to see one of the following: ?EPPN=... / ?EmployeeID=... / ?FNO=... / ?Person=... / ?ProfilesNodeID=... / ?ProfilesURLName=... / ?URL=...'
-    ProfilesResponse:
-      type: object
-      properties:
-        Profiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/Profile'
-        api_notes:
-          type: string
     Profile:
       type: object
       properties:
@@ -243,3 +234,12 @@ components:
           items:
             type: object
             additionalProperties: true
+    ProfilesResponse:
+      type: object
+      properties:
+        Profiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Profile'
+        api_notes:
+          type: string

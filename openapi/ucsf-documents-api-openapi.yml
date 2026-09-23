@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   title: UCSF Industry Library Solr Documents API
   version: '5'
-  description: Public, unauthenticated Apache Solr query interface over the UCSF Industry Documents Library (IDL) — an archive of 28.2 million internal documents from the tobacco, drug, chemical, food, fossil fuel and opioid industries, produced in litigation and preserved by the UCSF Library Center for Knowledge Management (CKM). The interface is documented by UCSF in "Industry Documents Data API v5" and is queried directly against the IDL Solr server. This OpenAPI description is DERIVED by API Evangelist from that UCSF documentation plus live probed responses; UCSF does not publish an OpenAPI document.
+  description: Public, unauthenticated Apache Solr query interface over the UCSF Industry Documents Library (IDL) — an archive of 28.2 million internal documents from the tobacco, drug, chemical, food, fossil fuel and opioid industries, produced in litigation and preserved by the UCSF Library Center for Knowledge Management (CKM).
   termsOfService: https://www.industrydocuments.ucsf.edu/copyright/
   contact:
     name: UCSF Industry Documents Library
@@ -32,7 +32,7 @@ paths:
       - Documents
       operationId: queryDocuments
       summary: Query the Industry Documents Library corpus
-      description: Executes a Solr query against the IDL corpus. Retrieve a single document with `q=id:<8-character-id>`, or run a field query using Solr syntax with AND / OR / NOT and explicit parentheses. Results are paged 100 records at a time via `start`. Ampersands inside field values must be percent-encoded as %26.
+      description: Executes a Solr query against the IDL corpus. Retrieve a single document with `q=id:`, or run a field query using Solr syntax with AND / OR / NOT and explicit parentheses. Results are paged 100 records at a time via `start`. Ampersands inside field values must be percent-encoded as %26.
       parameters:
       - name: q
         in: query
