@@ -99,33 +99,6 @@ paths:
           description: Unknown Solr collection.
 components:
   schemas:
-    SolrResponse:
-      type: object
-      properties:
-        responseHeader:
-          type: object
-          properties:
-            status:
-              type: integer
-            QTime:
-              type: integer
-            params:
-              type: object
-              additionalProperties: true
-        response:
-          type: object
-          properties:
-            numFound:
-              type: integer
-              description: Total records matching the query.
-            start:
-              type: integer
-            numFoundExact:
-              type: boolean
-            docs:
-              type: array
-              items:
-                $ref: '#/components/schemas/IndustryDocument'
     IndustryDocument:
       type: object
       description: One archived industry document record as indexed in the ltdl3 collection.
@@ -212,3 +185,30 @@ components:
           type: array
           items:
             type: string
+    SolrResponse:
+      type: object
+      properties:
+        responseHeader:
+          type: object
+          properties:
+            status:
+              type: integer
+            QTime:
+              type: integer
+            params:
+              type: object
+              additionalProperties: true
+        response:
+          type: object
+          properties:
+            numFound:
+              type: integer
+              description: Total records matching the query.
+            start:
+              type: integer
+            numFoundExact:
+              type: boolean
+            docs:
+              type: array
+              items:
+                $ref: '#/components/schemas/IndustryDocument'
