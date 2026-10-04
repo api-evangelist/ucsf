@@ -112,14 +112,15 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
-    Error:
+    ProfilesResponse:
       type: object
       properties:
-        error:
+        Profiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Profile'
+        api_notes:
           type: string
-          description: Human-readable error message.
-      example:
-        error: 'You didn''t specify an identifier type to look up! We were expecting to see one of the following: ?EPPN=... / ?EmployeeID=... / ?FNO=... / ?Person=... / ?ProfilesNodeID=... / ?ProfilesURLName=... / ?URL=...'
     Profile:
       type: object
       properties:
@@ -234,12 +235,11 @@ components:
           items:
             type: object
             additionalProperties: true
-    ProfilesResponse:
+    Error:
       type: object
       properties:
-        Profiles:
-          type: array
-          items:
-            $ref: '#/components/schemas/Profile'
-        api_notes:
+        error:
           type: string
+          description: Human-readable error message.
+      example:
+        error: 'You didn''t specify an identifier type to look up! We were expecting to see one of the following: ?EPPN=... / ?EmployeeID=... / ?FNO=... / ?Person=... / ?ProfilesNodeID=... / ?ProfilesURLName=... / ?URL=...'
