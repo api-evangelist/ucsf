@@ -1,4 +1,4 @@
-# University of California, San Francisco (ucsf)
+# University of California, San Francisco
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,79 +64,150 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-The University of California, San Francisco (UCSF) is a public health-sciences university dedicated exclusively to graduate and health professions education, biomedical research, and patient care. This repository catalogs UCSF's public developer and API footprint as an [APIs.json](http://apisjson.org/) profile.
+The University of California, San Francisco (UCSF) is a public health-sciences university and the only UC campus dedicated exclusively to graduate and health professions education, biomedical research, and patient care. Unlike most universities in this cohort, UCSF operates two genuinely institution-owned public APIs rather than renting them from a platform vendor: the UCSF Profiles JSON API, run by the UCSF Clinical and Translational Science Institute over 8,000+ researcher records, and the UCSF Industry Documents Library Solr API, run by the UCSF Library Center for Knowledge Management over 28.2 million internal industry documents produced in tobacco, drug, chemical, food, fossil fuel and opioid litigation. Both are anonymous, read-only, and documented by UCSF itself. UCSF also operates a Shibboleth identity provider registered in the InCommon Federation as urn:mace:incommon:ucsf.edu. Everything else in UCSF's machine-readable footprint is a vendor platform running under a UCSF name — Dryad for research data, Ex Libris Primo for library discovery, CourseLeaf for the course catalog, and the California Digital Library's eScholarship for OAI-PMH harvesting — and is recorded here as a tenant relationship, not as UCSF engineering. There is no central UCSF developer portal: the developer.ucsf.edu host recorded in the June 2026 profile does not resolve on any public DNS resolver and has never been archived, and UCSF's API gateway at unified-api.ucsf.edu answers only with a Citrix challenge. UCSF publishes no OpenAPI, no changelog, and no status feed for either API it does run.
 
-- APIs.json: https://raw.githubusercontent.com/api-evangelist/ucsf/refs/heads/main/apis.yml
-- Run with Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=ucsf-api-evangelist&utm_content=repo
+**Areas:** University · Higher Education · Education · United States · California · UC System · Public Research University · Health Sciences · Research · Researcher Profiles · Research Data · Open Data
 
-## Type
+## University of California, San Francisco on APIs.io
 
-University / Public Research University / Producer / Public
+Everything profiled for University of California, San Francisco is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ucsf/](https://apis.io/providers/ucsf/)** — or go straight to one of the APIs or properties below.
 
-## Who operates what
+### APIs (8)
 
-A university is a federation of buyers, so every surface below carries an **operator**. `institution` means UCSF runs the thing itself. `tenant` means the data is UCSF's but the contract belongs to a platform vendor, and the vendor's spec is deliberately **not** saved here.
+- [UCSF Identity Provider (Shibboleth / InCommon)](https://apis.io/apis/ucsf/incommon-idp/) — UCSF's Shibboleth SAML 2.0 identity provider, registered in the InCommon Federation and re-exported to eduGAIN. Signed, versioned, publicly retrievable…
+- [UCSF Industry Documents Library Content API](https://apis.io/apis/ucsf/idl-content-api/) — Publicly readable REST content API behind the Industry Documents Library website, exposing 320 editorial pages — collection guides, curated document sets,…
+- [UCSF DataShare (Dryad)](https://apis.io/apis/ucsf/datashare-dryad/) — UCSF's institutional research-data repository, delivered on the Dryad platform. 1,306 DataCite DOIs carry a UCSF publisher string. Dryad operates a public…
+- [UCSF scholarly output via eScholarship OAI-PMH](https://apis.io/apis/ucsf/escholarship-oai/) — UCSF's open-access scholarly output is harvestable as a named OAI-PMH set on the University of California's eScholarship repository, returning oai_dc…
+- [UCSF Library Discovery (Ex Libris Primo)](https://apis.io/apis/ucsf/library-discovery/) — UCSF Library's discovery layer, delivered on Ex Libris Primo. No UCSF-operated catalog API was found; the Primo and Alma APIs are Ex Libris products and are…
+- [UCSF Course Catalog (CourseLeaf)](https://apis.io/apis/ucsf/course-catalog/) — The 2026–27 UCSF course catalog, published through Leepfrog's CourseLeaf. No public course, timetable or registrar API exists — the CourseLeaf JSON…
+- [University of California, San Francisco Documents API](https://apis.io/apis/ucsf/ucsf-documents-api/) — Query the IDL document corpus by identifier or by Solr query syntax.
+- [University of California, San Francisco Profiles API](https://apis.io/apis/ucsf/ucsf-profiles-api/) — Look up a UCSF person's public research profile.
 
-### Institution-operated
+### Published properties
 
-- **UCSF Profiles JSON API** — `https://api.profiles.ucsf.edu/json/v2/` — open JSON API (v2) over UCSF Profiles, run by UCSF CTSI, covering 8,000+ researchers, faculty and postdocs with ORCID iDs, publications, clinical trials, and funding. Anonymous; a `source` parameter identifies the caller but is not a credential. CORS and JSONP. Deprecation notices travel in-band via an `api_notes` field. Docs: https://profilesdeveloper.ucsf.edu/json-api
-- **UCSF Industry Documents Library Solr API** — `https://solr.idl.ucsf.edu/solr/ltdl3/` — anonymous Apache Solr query interface over **28,298,987** internal documents from the tobacco, drug, chemical, food, fossil fuel and opioid industries, produced in litigation and preserved by the UCSF Library Center for Knowledge Management. Responses in xml, json, python, ruby, php or csv.
-- **UCSF Identity Provider (Shibboleth / InCommon)** — `https://dp.ucsf.edu/idp/shibboleth` — UCSF self-publishes SAML 2.0 metadata on its own host (entityIDs `urn:mace:incommon:ucsf.edu` and `https://dp.ucsf.edu/idp/shibboleth`, `shibmd:Scope ucsf.edu`, with an IDPSSODescriptor, an AttributeAuthorityDescriptor and an SPSSODescriptor). InCommon redistributes a signed copy through its MDQ service and re-exports to eduGAIN.
-- **UCSF Industry Documents Library Content API** — `https://cms.libckm.org/api/` — publicly readable REST content layer behind the IDL website, 320 editorial pages. Undocumented and unversioned; recorded, but no contract is claimed for it.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Tenant relationships (UCSF's data, a vendor's contract)
+#### JSON Schema (2)
 
-- **UCSF DataShare** — https://datashare.ucsf.edu/ — Dryad platform. 1,306 DataCite DOIs carry a UCSF publisher string.
-- **eScholarship OAI-PMH set `ucsf`** — California Digital Library, UC-system-wide.
-- **UCSF Library Discovery** — https://search.library.ucsf.edu/ — Ex Libris Primo.
-- **UCSF Course Catalog** — https://coursecatalog.ucsf.edu/ — Leepfrog CourseLeaf. No course or registrar API is exposed.
+The data models the API reads and writes.
 
-## What UCSF does not publish
+- [UCSF Industry Documents Library Document](https://apis.io/schemas/ucsf/ucsf-industry-document/)
+- [UCSF Profiles Person](https://apis.io/schemas/ucsf/ucsf-profile/)
 
-No OpenAPI. No changelog or release feed for either API. No status feed. No scopes — both public APIs are anonymous and undifferentiated. No machine-readable error contract. No public course, timetable or registrar API. **No central developer portal**: the `developer.ucsf.edu` host recorded in the June 2026 profile returns NXDOMAIN from Google, Cloudflare and Quad9 and has zero Internet Archive snapshots at any date, so it was never publicly reachable and all pointers to it have been removed. UCSF's live gateway is `unified-api.ucsf.edu`, which answers only with a Citrix NetScaler challenge.
+#### JSON-LD (2)
 
-## Education-regime standard conformance
+Linked-data contexts for the provider's vocabulary.
 
-| Standard | Status | Operator |
-|---|---|---|
-| `saml` | conformant | institution |
-| `shibboleth` | conformant | institution |
-| `orcid` | conformant | institution |
-| `oai-pmh` | conformant | tenant (California Digital Library) |
-| `datacite` | conformant | tenant (Dryad) |
-| `scim`, `lti`, `oneroster`, `ed-fi`, `caliper`, `qti`, `crossref` | not found | — |
+- [Ucsf Context](https://apis.io/jsonld/ucsf/ucsf-context/)
+- [Ucsf Industry Documents Context](https://apis.io/jsonld/ucsf/ucsf-industry-documents-context/)
 
-See [conformance/ucsf-education-standards-conformance.yml](conformance/ucsf-education-standards-conformance.yml).
+#### Examples (3)
 
-## Known defect in a UCSF-operated API
+Example requests and responses.
 
-The IDL Solr `rows` parameter is accepted and echoed back in `responseHeader.params` but **not honoured** — `rows=0`, `rows=1`, `rows=5` and `rows=100` each returned 1000 documents on 2026-08-19. UCSF's published documentation states "we only return 100 records at a time" and instructs paging with `&start=100`; the deployed page size is 1000. `start` is honoured. Recorded in [lifecycle/ucsf-lifecycle.yml](lifecycle/ucsf-lifecycle.yml).
+- [Ucsf Industry Documents Search Response](https://apis.io/examples/ucsf/ucsf-industry-documents-search-response/)
+- [Ucsf Industry Documents Single Document](https://apis.io/examples/ucsf/ucsf-industry-documents-single-document/)
+- [Ucsf Profiles Json Api Response](https://apis.io/examples/ucsf/ucsf-profiles-json-api-response/)
 
-## Artifacts
+#### Governance rules (1)
 
-| Artifact | Path |
+Spectral rulesets for the provider's contracts.
+
+- [University of California, San Francisco — governance rules](https://apis.io/rules/ucsf/ucsf-governance-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ucsf Authentication](https://apis.io/security/ucsf/ucsf-authentication/)
+- [Ucsf Domain Security](https://apis.io/security/ucsf/ucsf-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Ucsf Scopes](https://apis.io/scopes/ucsf/ucsf-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Ucsf Plans Pricing](https://apis.io/plans/ucsf/ucsf-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Ucsf Rate Limits](https://apis.io/rate-limits/ucsf/ucsf-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Ucsf Finops](https://apis.io/finops/ucsf/ucsf-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.ucsf.edu/)
+- [Documentation](https://profilesdeveloper.ucsf.edu/json-api)
+- [API reference](https://profilesdeveloper.ucsf.edu/json-api)
+- [Support](https://profilesdeveloper.ucsf.edu/contact-and-support)
+- [Blog](https://www.ucsf.edu/news)
+- [Terms of service](https://www.ucsf.edu/terms-of-use)
+- [Privacy policy](https://www.ucsf.edu/website-privacy-policy)
+- [GitHub](https://github.com/UCSF)
+
+## API Evangelist rating
+
+**Kin Score 30.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
 |---|---|
-| OpenAPI (derived) | [openapi/](openapi/) — pristine copies in [openapi/_original/](openapi/_original/) |
-| JSON Schema | [json-schema/](json-schema/) |
-| Examples (live captures) | [examples/](examples/) |
-| Vocabulary | [vocabulary/ucsf-vocabulary.yml](vocabulary/ucsf-vocabulary.yml) |
-| Authentication + SAML metadata | [authentication/](authentication/) |
-| Scopes | [scopes/ucsf-scopes.yml](scopes/ucsf-scopes.yml) |
-| Errors | [errors/ucsf-errors.yml](errors/ucsf-errors.yml) |
-| Conformance | [conformance/](conformance/) |
-| Lifecycle | [lifecycle/ucsf-lifecycle.yml](lifecycle/ucsf-lifecycle.yml) |
-| Governance rules | [rules/ucsf-governance-rules.yml](rules/ucsf-governance-rules.yml) |
-| JSON-LD | [json-ld/](json-ld/) |
-| Plans / Rate limits / FinOps | [plans/](plans/) · [rate-limits/](rate-limits/) · [finops/](finops/) |
-| Review log | [review.yml](review.yml) |
+| Discoverability | 57.1 |
+| Contract quality | 24.4 |
+| Contract governance | 3.8 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 45.2 |
+| Access clarity | 26.3 |
 
-Every artifact carries `generated`, `method` (`searched` / `generated` / `derived` / `probed` / `none`) and `source`. The OpenAPI descriptions are **derived by API Evangelist** from UCSF's own documentation plus live probed responses — UCSF publishes no OpenAPI of its own.
+**Agent readiness 31.1** — agent-ready
 
-## Timestamps
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-- Created: 2026-06-03
-- Modified: 2026-08-19
+**Regulatory alignment 34.3** — Education & Research
 
-## Maintainers
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ucsf/](https://apis.io/providers/ucsf/).
 
-- Kin Lane — kin@apievangelist.com
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for University of California, San Francisco: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ucsf/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
